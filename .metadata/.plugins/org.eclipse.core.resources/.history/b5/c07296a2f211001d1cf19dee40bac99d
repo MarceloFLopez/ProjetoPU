@@ -1,0 +1,11 @@
+package br.com.projetopeu.bean;
+
+import javax.faces.view.ViewScoped;
+
+@Named("buttonBasicView")
+@ViewScoped
+public class BasicView {
+	public void sleep() throws InterruptedException {
+		TimeUnit.SECONDS.sleep(1);
+	}
+}

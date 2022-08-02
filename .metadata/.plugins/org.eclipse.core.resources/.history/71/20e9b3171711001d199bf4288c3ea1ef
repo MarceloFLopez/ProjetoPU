@@ -1,0 +1,6 @@
+package br.com.projetopeu.services;
+
+public interface DAOService {
+
+	public void salvar(Object t);
+}

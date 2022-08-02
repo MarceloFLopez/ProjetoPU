@@ -1,0 +1,5 @@
+package br.com.projetopeu.model;
+
+public class Pessoa {
+
+}

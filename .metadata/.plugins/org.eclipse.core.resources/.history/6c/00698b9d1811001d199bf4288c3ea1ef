@@ -1,0 +1,9 @@
+package br.com.projetopeu.services;
+
+import br.com.projetopeu.model.Produto;
+
+public interface DAOService {
+
+	public void salvar(Produto produto);
+	public Object findById(Long id);
+}

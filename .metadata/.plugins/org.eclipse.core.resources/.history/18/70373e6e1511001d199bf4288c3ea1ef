@@ -1,0 +1,12 @@
+package util;
+
+import javax.persistence.Persistence;
+
+import org.junit.Test;
+
+import br.com.projetopeu.util.JPAUTil;
+@Test
+public class JPAUtilTest {
+
+	
+}

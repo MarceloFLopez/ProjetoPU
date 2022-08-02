@@ -1,0 +1,7 @@
+package br.com.projetopeu.services;
+
+public interface CRUDService {
+
+	public void salvar(Object t);
+	public Object findById(Long id);
+}

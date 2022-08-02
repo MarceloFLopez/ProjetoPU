@@ -1,0 +1,27 @@
+package br.com.projetopeu.model;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import javax.persistence.Entity;
+
+import br.com.projetopeu.model.enums.TipoLancamento;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+@Entity
+public class Lancamento {
+
+	private Long id;
+	private Pessoa pessoa;
+	private String descricao;
+	private BigDecimal valor;
+	private TipoLancamento tipo;
+	private LocalDate dataVencimento;
+	private LocalDate dataPagamento;
+
+}

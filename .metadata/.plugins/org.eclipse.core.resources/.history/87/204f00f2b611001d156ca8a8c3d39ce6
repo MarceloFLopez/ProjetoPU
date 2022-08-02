@@ -1,0 +1,41 @@
+package br.com.projetopeu.model;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.ManyToOne;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Entity
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Produto {
+
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
+	@Column(length = 50, nullable = false,unique = true)
+	private String nome;
+	@Column(nullable = false)
+	private Integer quantidade;
+	@Column(scale = 2,precision = 5)
+	private BigDecimal preco;
+	private LocalDate dataValidade;
+	private BigDecimal valorTotalProdutos;
+	@ManyToOne
+	private Categoria categoria;
+
+	public BigDecimal calculaValorEstoque(BigDecimal preco, Integer quantidade) {
+		return this.valorTotalProdutos = BigDecimal.valueOf(quantidade).multiply(preco);
+	}
+
+}

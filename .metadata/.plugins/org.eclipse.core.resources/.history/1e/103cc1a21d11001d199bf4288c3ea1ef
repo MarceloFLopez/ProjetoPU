@@ -1,0 +1,41 @@
+package testClass;
+
+import java.math.BigDecimal;
+import java.time.LocalDate;
+
+import org.junit.Test;
+
+import br.com.projetopeu.dao.ProdutoDAO;
+import br.com.projetopeu.model.Produto;
+
+public class DAOTest {
+
+	
+	public void buscar() {
+		
+	}
+	
+	@Test
+	public void salvar() {
+		ProdutoDAO dao = new ProdutoDAO();
+
+		Produto p1 = new Produto();
+		Produto p2 = new Produto();
+
+		p1.setNome("Coca Cola 2L");
+		p1.setPreco(BigDecimal.valueOf(10.00));
+		p1.setDataValidade(LocalDate.of(2022, 10, 10));
+		p1.setQuantidade(10);
+		p1.setValorEsoque(p1.calculaValorEstoque(p1.getPreco(), p1.getQuantidade()));;
+
+		p2.setNome("Heiniken 800ml");
+		p2.setPreco(BigDecimal.valueOf(8.00));
+		p2.setDataValidade(LocalDate.of(2022, 8, 30));
+		p2.setQuantidade(8);
+		p2.calculaValorEstoque(p2.getPreco(), p2.getQuantidade());
+		dao.salvar(p1);
+		dao.salvar(p2);
+	}
+	
+	
+}

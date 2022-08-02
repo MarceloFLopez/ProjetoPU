@@ -1,0 +1,9 @@
+package br.com.projetopeu.util.test;
+
+public class TestConnUtil {
+
+	@Test
+	public void textConn() {
+		
+	}
+}

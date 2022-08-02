@@ -1,0 +1,11 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>br.com.projetopu</groupId>
+	<artifactId>ProjetoPU</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+	<packaging>war</packaging>
+	<name>Marcelo Ferreira Lopez</name>
+	<description>Modelo de criação para projetos java-web usando: Java/Maven/JPA/MySQL/Primefaces</description>
+</project>

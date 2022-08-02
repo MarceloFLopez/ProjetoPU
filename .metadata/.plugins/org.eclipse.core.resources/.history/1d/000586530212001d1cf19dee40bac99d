@@ -1,0 +1,57 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+<h:head>
+	<title>Categoria</title>
+</h:head>
+<h:body>
+	<ui:include src="/pages/menu.xhtml" />
+	<h:form>
+		<p:panel header="Categorias">
+			<p:messages closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<h:panelGrid id="painelDados" columns="4">
+				<p:outputLabel value="Código" />
+				<p:inputText readonly="true" size="3"
+					value="#{categoriaBean.categoria.id}" />
+				<p:outputLabel value="Nome" />
+				<p:inputText maxlength="50" size="30"
+					value="#{categoriaBean.categoria.nome}" required="true"
+					requiredMessage="O campo nome deve ser preenchido!" />
+			</h:panelGrid>
+			<h:panelGrid olumns="3">
+				<p:commandButton value="Salvar"
+					actionListener="#{categoriaBean.salvar()}"
+					update="painelDados tabela" />
+				<p:commandButton value="Editar"
+					actionListener="#{produtoBean.editar()}"
+					update="painelDados tabela" />
+			</h:panelGrid>
+			<p:separator />
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado!"
+				paginator="true" value="#{categoriaBean.categorias}"
+				var="cursorCategoria">
+				<p:column headerText="#" width="50">
+					<div align="center">
+						<h:outputText value="#{cursorCategoria.id}" />
+					</div>
+				</p:column>
+				<p:column headerText="Nome">
+					<div align="center">
+						<h:outputText value="#{cursorCategoria.nome}" />
+					</div>
+				</p:column>
+				<p:column headerText="Editar" width="50">
+					<p:commandButton icon="pi-sync" style="width: 40px" heigth="30px"
+						actionListener="#{categoriaBean.selecionar(cursor)}"
+						process="@this" update="@form:painelDados" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

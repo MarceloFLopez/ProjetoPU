@@ -1,0 +1,4 @@
+@charset "ISO-8859-1";
+.label{
+	margin-left:5px; 
+}

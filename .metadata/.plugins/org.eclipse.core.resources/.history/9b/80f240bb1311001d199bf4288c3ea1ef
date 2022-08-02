@@ -1,0 +1,16 @@
+package br.com.projetopeu.util;
+
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
+
+public class JPAUTil {
+
+	private static EntityManagerFactory EMF = Persistence.createEntityManagerFactory("ProjetoPU");
+	private static EntityManager em;
+
+	public static EntityManager getEntityManager() {
+		em = EMF.createEntityManager();
+		return em;
+	}
+}

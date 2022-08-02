@@ -1,0 +1,6 @@
+package br.com.projetopeu.bean;
+@Named("buttonBasicView")
+@ViewScoped
+public class BasicView {
+
+}

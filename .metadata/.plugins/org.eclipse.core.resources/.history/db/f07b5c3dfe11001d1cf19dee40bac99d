@@ -1,0 +1,129 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+
+<h:head>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/resources/css/style.css" />
+	<h:outputScript>
+	PrimeFaces.locales['pt_BR'] = {
+    closeText: 'Fechar',
+    prevText: 'Anterior',
+    nextText: 'PrÃ³ximo',
+    currentText: 'ComeÃ§o',
+    monthNames: ['Janeiro','Fevereiro','MarÃ§o','Abril','Maio','Junho','Julho','Agosto','Setembro','Outubro','Novembro','Dezembro'],
+    monthNamesShort: ['Jan','Fev','Mar','Abr','Mai','Jun', 'Jul','Ago','Set','Out','Nov','Dez'],
+    dayNames: ['Domingo','Segunda','TerÃ§a','Quarta','Quinta','Sexta','SÃ¡bado'],
+    dayNamesShort: ['Dom','Seg','Ter','Qua','Qui','Sex','SÃ¡b'],
+    dayNamesMin: ['D','S','T','Q','Q','S','S'],
+    weekHeader: 'Semana',
+    firstDay: 0,
+    isRTL: false,
+    showMonthAfterYear: false,
+    yearSuffix: '',
+    timeOnlyTitle: 'SÃ³ Horas',
+    timeText: 'Tempo',
+    hourText: 'Hora',
+    minuteText: 'Minuto',
+    secondText: 'Segundo',
+    ampm: false,
+    month: 'MÃªs',
+    week: 'Semana',
+    day: 'Dia',
+    allDayText : 'Todo o Dia' };
+	</h:outputScript>
+	<title>Produto</title>
+</h:head>
+<h:body>
+	<ui:include src="/pages/menu.xhtml" />
+	<h:form>
+		<p:panel header="Produto">
+			<p:messages closable="true">
+				<p:autoUpdate />
+			</p:messages>
+			<h:panelGrid id="painelDados" columns="6">
+				<p:outputLabel value="Código" />
+				<p:inputText readonly="true" size="10"
+					value="#{produtoBean.produto.id}" />
+
+				<p:outputLabel value="Nome" />
+				<p:inputText maxlength="50" size="30"
+					value="#{produtoBean.produto.nome}" />
+
+				<p:outputLabel value="Quantidade" />
+				<p:inputText size="10" value="#{produtoBean.produto.quantidade}"
+					converterMessage="O campo quantidade deve ser um número formado por um ou mais dígitos." />
+
+				<p:outputLabel value="Preço" />
+				<p:inputText size="10" value="#{produtoBean.produto.preco}"
+					converterMessage="O campo preço deve ser um número decimal!">
+					<f:convertNumber pattern="0.00" />
+				</p:inputText>
+
+				<p:outputLabel value="Data de Valdidade" />
+				<p:calendar size="30" pattern="dd/MM/yyyy"
+					value="#{produtoBean.produto.dataValidade}" />
+
+				<p:outputLabel value="Categoria" />
+				<p:selectOneMenu size="100" value="#{produtoBean.produto.categoria}"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemDisabled="true"
+						itemLabel="Selecione uma categoria" />
+					<f:selectItems value="#{produtoBean.categorias}"
+						var="categoriaCursor"
+						itemLabel="#{categoriaCursor.id} - #{categoriaCursor.nome}" />
+				</p:selectOneMenu>
+			</h:panelGrid>
+			<h:panelGrid columns="3">
+				<p:commandButton value="Salvar"
+					actionListener="#{produtoBean.salvar()}"
+					update="painelDados tabela" />
+				<p:commandButton value="Deletar"
+					actionListener="#{produtoBean.excluir()}"
+					update="painelDados tabela" />
+				<p:commandButton value="Editar"
+					actionListener="#{produtoBean.editar()}"
+					update="painelDados tabela" />
+			</h:panelGrid>
+			<p:separator />
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado!"
+				paginator="true" value="#{produtoBean.produtos}" var="cursor">
+				<p:column headerText="#" width="50">
+				<div align="center"><h:outputText value="#{cursor.id}" /></div>
+					
+				</p:column>
+				<p:column headerText="Nome">
+					<div align="center">
+						<h:outputText value="#{cursor.nome}" />
+					</div>
+				</p:column>
+				<p:column headerText="Preço" width="150">
+					<h:outputText value="#{cursor.preco}">
+						<f:convertNumber pattern="0.00" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Quantidade" width="150">
+					<h:outputText value="#{cursor.quantidade}" />
+				</p:column>
+				<p:column headerText="Validade" width="150">
+					<h:outputText value="#{cursor.dataValidade}">
+						<f:convertDateTime type="localDate" />
+					</h:outputText>
+				</p:column>
+				<p:column headerText="Categoria" width="220">
+					<h:outputText
+						value="#{cursor.categoria.id} #{cursor.categoria.nome}" />
+				</p:column>
+				<p:column headerText="Editar" width="50">
+					<p:commandButton icon="pi-sync" style="width: 40px" heigth="30px"
+						actionListener="#{produtoBean.selecionar(cursor)}" process="@this"
+						update="@form:painelDados" />
+				</p:column>
+			</p:dataTable>
+		</p:panel>
+	</h:form>
+</h:body>
+</html>

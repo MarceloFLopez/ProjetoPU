@@ -1,0 +1,8 @@
+package br.com.projetopeu.util;
+
+import javax.persistence.EntityManagerFactory;
+
+public class JPAUTil {
+
+	private static EntityManagerFactory EMF =
+}

@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kb-project>
+ <depends-on-projects>
+  <project name="model-domain"/>
+  <project name="model-persistence"/>
+ </depends-on-projects>
+ <used-by-projects>
+  <project name="model-wrest"/>
+  <project name="model-web"/>
+ </used-by-projects>
+ <paths>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-client/3.0.13.Final/resteasy-client-3.0.13.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/c3p0/c3p0/0.9.1.2/c3p0-0.9.1.2.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/jasper.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/codehaus/jackson/jackson-core-asl/1.9.13/jackson-core-asl-1.9.13.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/apache/geronimo/specs/geronimo-jta_1.1_spec/1.1.1/geronimo-jta_1.1_spec-1.1.1.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/commons-logging/commons-logging/1.2/commons-logging-1.2.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/apache/httpcomponents/httpclient/4.5.2/httpclient-4.5.2.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-jdbc.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/apache/poi/poi/3.9/poi-3.9.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/spec/javax/ws/rs/jboss-jaxrs-api_2.0_spec/1.0.1.Beta1/jboss-jaxrs-api_2.0_spec-1.0.1.Beta1.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-dbcp.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/dom4j/dom4j/1.6.1/dom4j-1.6.1.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina-tribes.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/hibernate-validator/5.4.1.Final/hibernate-validator-5.4.1.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-ko.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/mysql/mysql-connector-java/5.1.38/mysql-connector-java-5.1.38.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-jaxb-provider/3.0.13.Final/resteasy-jaxb-provider-3.0.13.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/istack/istack-commons-runtime/2.16/istack-commons-runtime-2.16.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/javassist/javassist/3.20.0-GA/javassist-3.20.0-GA.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/hibernate-c3p0/5.4.17.Final/hibernate-c3p0-5.4.17.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/servlet-api.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/hibernate-entitymanager/5.1.0.Final/hibernate-entitymanager-5.1.0.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/jersey/jersey-core/1.19.4/jersey-core-1.19.4.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/jersey/jersey-client/1.19.4/jersey-client-1.19.4.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/logging/jboss-logging-annotations/1.2.0.Beta1/jboss-logging-annotations-1.2.0.Beta1.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-pt-BR.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-jackson-provider/3.1.0.Final/resteasy-jackson-provider-3.1.0.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-util-scan.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/common/hibernate-commons-annotations/4.0.5.Final/hibernate-commons-annotations-4.0.5.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-fr.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/codehaus/jackson/jackson-jaxrs/1.9.13/jackson-jaxrs-1.9.13.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/apache/commons/commons-lang3/3.10/commons-lang3-3.10.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/commons-codec/commons-codec/1.2/commons-codec-1.2.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/javax/persistence/hibernate-jpa-2.1-api/1.0.0.Final/hibernate-jpa-2.1-api-1.0.0.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/codehaus/jackson/jackson-xc/1.9.13/jackson-xc-1.9.13.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/codehaus/jackson/jackson-mapper-asl/1.9.13/jackson-mapper-asl-1.9.13.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/antlr/antlr/2.7.7/antlr-2.7.7.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina-ha.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-coyote.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-ja.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-websocket.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/weld/servlet/weld-servlet-shaded/3.0.2.Final/weld-servlet-shaded-3.0.2.Final.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-weld-servlet-shaded-3.0.2.Final.jar/meta-inf/faces-config.xml" project="model-persistence"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/xml/fastinfoset/FastInfoset/1.2.12/FastInfoset-1.2.12.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/fasterxml/classmate/1.3.1/classmate-1.3.1.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/xml/bind/jsr173_api/1.0/jsr173_api-1.0.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/net/jcip/jcip-annotations/1.0/jcip-annotations-1.0.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/json/json/20160810/json-20160810.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/jaspic-api.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/weld/servlet/weld-servlet/2.3.3.Final/weld-servlet-2.3.3.Final.jar">
+   <libraries>
+    <library class="faces-config">
+     <id class="model-object"
+      path="FileSystems/lib-weld-servlet-2.3.3.Final.jar/meta-inf/faces-config.xml" project="model-persistence"/>
+    </library>
+   </libraries>
+  </path>
+  <path value="C:/Users/Marcelo/.m2/repository/junit/junit/3.8.1/junit-3.8.1.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-cdi/3.1.4.Final/resteasy-cdi-3.1.4.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/commons-lang/commons-lang/2.6/commons-lang-2.6.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-util.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-jaxrs-services/3.1.4.Final/resteasy-jaxrs-services-3.1.4.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-jni.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/el-api.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/jsp-api.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/websocket-api.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/xml-apis/xml-apis/1.0.b2/xml-apis-1.0.b2.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-de.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina-ant.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/jasper-el.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/apache/httpcomponents/httpcore/4.4.4/httpcore-4.4.4.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-api.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/annotations-api.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina-storeconfig.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-servlet-initializer/3.1.4.Final/resteasy-servlet-initializer-3.1.4.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/xml/bind/jaxb-core/2.2.7/jaxb-core-2.2.7.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/validation/validation-api/1.1.0.Final/validation-api-1.1.0.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/logging/jboss-logging/3.3.0.Final/jboss-logging-3.3.0.Final.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/ecj-4.20.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/ws/rs/jsr311-api/1.1.1/jsr311-api-1.1.1.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/resteasy/resteasy-jaxrs/3.1.4.Final/resteasy-jaxrs-3.1.4.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/commons-io/commons-io/2.4/commons-io-2.4.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/jandex/2.0.0.Final/jandex-2.0.0.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/mchange/c3p0/0.9.5.3/c3p0-0.9.5.3.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/xml/bind/jaxb-api/2.2.7/jaxb-api-2.2.7.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/commons-fileupload/commons-fileupload/1.4/commons-fileupload-1.4.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/google/code/gson/gson/2.8.6/gson-2.8.6.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-es.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-ru.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/sun/xml/bind/jaxb-impl/2.2.7/jaxb-impl-2.2.7.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-zh-CN.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/activation/activation/1.1.1/activation-1.1.1.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/tomcat-i18n-cs.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/hibernate/hibernate-core/5.1.0.Final/hibernate-core-5.1.0.Final.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/com/mchange/mchange-commons-java/0.2.15/mchange-commons-java-0.2.15.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/javax/ws/rs/javax.ws.rs-api/2.0.1/javax.ws.rs-api-2.0.1.jar"/>
+  <path value="D:/Desenvolvimento/WOKRSPACE/TOMCAT/apache-tomcat-9.0.55/lib/catalina-ssi.jar"/>
+  <path value="C:/Users/Marcelo/.m2/repository/org/jboss/spec/javax/annotation/jboss-annotations-api_1.2_spec/1.0.0.Final/jboss-annotations-api_1.2_spec-1.0.0.Final.jar"/>
+ </paths>
+ <validation>
+  <el/>
+ </validation>
+ <aliases/>
+ <includes/>
+ <uris/>
+</kb-project>

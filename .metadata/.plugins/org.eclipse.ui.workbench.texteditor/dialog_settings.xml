@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="Categoria"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="true"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="Produto"/>
+			<item value="produto"/>
+			<item value="quart"/>
+			<item value="categoria"/>
+			<item value="Categoria"/>
+			<item value="produtos"/>
+			<item value="Produtos"/>
+			<item value="Categorias"/>
+			<item value="omni"/>
+			<item value="omin"/>
+			<item value="weld"/>
+			<item value="primefaces"/>
+			<item value="servlet"/>
+			<item value="faces"/>
+		</list>
+		<list key="replacehistory">
+			<item value="Categoria"/>
+			<item value="categoria"/>
+			<item value="produto"/>
+			<item value="Produto"/>
+			<item value="Produtos"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="1160"/>
+		<item key="DIALOG_Y_ORIGIN" value="188"/>
+		<item key="DIALOG_WIDTH" value="284"/>
+		<item key="DIALOG_HEIGHT" value="391"/>
+		<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+	</section>
+</section>

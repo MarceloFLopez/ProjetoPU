@@ -1,0 +1,8 @@
+package br.com.projetopeu.model;
+
+public class Pessoa {
+
+	private Long id;
+	private String cpf;
+	private String nome;
+}
