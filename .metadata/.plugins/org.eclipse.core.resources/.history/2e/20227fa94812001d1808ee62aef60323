@@ -1,0 +1,22 @@
+package br.com.projetopeu.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+
+import lombok.Data;
+
+@SuppressWarnings("deprecation")
+@ManagedBean(name = "ola")
+@Data
+public class NomesBean {
+
+	private String nome;
+	private List<String> nomes = new ArrayList<>();
+
+	public void adicionar() {
+		this.nomes.add(nome);
+	}
+
+}

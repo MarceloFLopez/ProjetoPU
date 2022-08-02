@@ -1,0 +1,19 @@
+package br.com.projetopeu.bean;
+
+import javax.inject.Named;
+
+import lombok.Data;
+
+@Named(value =  "ola")
+@Data
+public class OlaBean {
+
+	private String nome;
+	private String sobrenome;
+	private String nomeCompleto;
+
+	public void dizerOla() {
+		this.nomeCompleto = this.nome.toUpperCase() + " " + this.sobrenome;
+	}
+
+}

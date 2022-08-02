@@ -1,0 +1,18 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html">
+
+<h:head>
+	<title>Teste JSF</title>
+</h:head>
+<h:body>
+	<h:form>
+		<h1>Olá #{ola.nomeCompleto}</h1>
+		<h:outputLabel value="Nome:" />
+		<h:inputText value="#{ola.nome}" /><br/>
+		<h:outputLabel value="Sobre nome:" />
+		<h:inputText value="#{ola.sobrenome}"/><br/>
+		<h:commandButton action="#{ola.dizerOla()}" value="Dizer Olá"/>
+	</h:form>
+</h:body>
+</html>

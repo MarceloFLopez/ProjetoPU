@@ -1,0 +1,28 @@
+package br.com.projetopeu.bean;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
+import javax.faces.view.ViewScoped;
+
+import lombok.Data;
+import java.io.Serializable;
+
+@SuppressWarnings("deprecation")
+@ManagedBean
+@Data
+@SessionScoped
+public class NomesBean implements Serializable {
+
+	private static final long serialVersionUID = 1L;
+
+	private String nome;
+	private List<String> nomes = new ArrayList<>();
+
+	public void adicionar() {
+		this.nomes.add(nome);
+	}
+
+}

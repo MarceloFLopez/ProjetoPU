@@ -3,7 +3,6 @@ INDEX VERSION 1.131+C:\Users\Marcelo\eclipse-workspace\.metadata\.plugins\org.ec
 2760482677.index
 2759040282.index
 487015483.index
-1605006047.index
 1619645301.index
 3234379904.index
 3980749499.index

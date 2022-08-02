@@ -1,0 +1,5 @@
+package br.com.projetopeu.bean;
+
+public class OlaBean {
+
+}

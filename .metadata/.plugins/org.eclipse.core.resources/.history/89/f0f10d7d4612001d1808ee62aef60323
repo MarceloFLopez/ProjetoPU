@@ -1,0 +1,13 @@
+package br.com.projetopeu.bean;
+
+import javax.annotation.ManagedBean;
+
+
+@ManagedBean
+public class OlaBean {
+
+	private String nome;
+	private String sobrenome;
+	private String nomeCompleto;
+
+}

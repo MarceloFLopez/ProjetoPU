@@ -1,0 +1,18 @@
+package br.com.projetopeu.bean;
+
+import lombok.Data;
+
+
+@javax.faces.bean.ManagedBean
+@Data
+public class OlaBean {
+
+	private String nome;
+	private String sobrenome;
+	private String nomeCompleto;
+	public void dizerOla() {
+		this.nomeCompleto = this.nome.toUpperCase()
+		+ " " + this.sobrenome;
+		}
+
+}

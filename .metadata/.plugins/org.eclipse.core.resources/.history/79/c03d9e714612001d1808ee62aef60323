@@ -1,0 +1,10 @@
+package br.com.projetopeu.bean;
+
+import javax.annotation.ManagedBean;
+import javax.inject.Named;
+
+@Named
+@ManagedBean
+public class OlaBean {
+
+}
