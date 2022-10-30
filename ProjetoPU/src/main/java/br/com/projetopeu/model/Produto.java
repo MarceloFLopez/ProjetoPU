@@ -12,7 +12,7 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.DecimalMax;
 import javax.validation.constraints.DecimalMin;
-import javax.validation.constraints.Future;
+import javax.validation.constraints.FutureOrPresent;
 import javax.validation.constraints.Max;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.NotBlank;
@@ -49,7 +49,7 @@ public class Produto {
 	private BigDecimal preco;
 	
 	@Column
-	@Future(message = "Informe uma data futura!")
+	@FutureOrPresent(message = "Informe uma data futura!")
 	private LocalDate dataValidade;
 	private BigDecimal valorTotalProdutos;
 	

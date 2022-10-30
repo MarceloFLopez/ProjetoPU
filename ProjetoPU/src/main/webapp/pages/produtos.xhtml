@@ -7,7 +7,7 @@
 
 <h:head>
 	<link type="text/css" rel="stylesheet"
-		href="#{request.contextPath}/resources/css/style.css" />
+		href="/resources/css/style.css" />
 	<h:outputScript>
 	PrimeFaces.locales['pt_BR'] = {
     closeText: 'Fechar',
@@ -64,33 +64,25 @@
 				</p:inputText>
 
 				<p:outputLabel value="Data de Valdidade" />
-				<p:calendar size="30" pattern="dd/MM/yyyy"
-					value="#{produtoBean.produto.dataValidade}" />
+				<p:calendar size="30" pattern="dd/MM/yyyy" value="#{produtoBean.produto.dataValidade}" />
 
 				<p:outputLabel value="Categoria" />
 				<p:selectOneMenu size="100" value="#{produtoBean.produto.categoria}"
 					converter="omnifaces.SelectItemsConverter">
-					<f:selectItem itemDisabled="true"
-						itemLabel="Selecione uma categoria" />
-					<f:selectItems value="#{produtoBean.categorias}"
-						var="categoriaCursor"
+					<f:selectItem itemDisabled="true" itemLabel="Selecione uma categoria" />
+					<f:selectItems value="#{produtoBean.categorias}" var="categoriaCursor"
 						itemLabel="#{categoriaCursor.id} - #{categoriaCursor.nome}" />
 				</p:selectOneMenu>
 			</h:panelGrid>
-			<h:panelGrid columns="3">
+			<h:panelGrid columns="3" style="justify-content:center">
 				<p:commandButton value="Salvar"
-					actionListener="#{produtoBean.salvar()}"
-					update="painelDados tabela" />
-				<p:commandButton value="Deletar"
-					actionListener="#{produtoBean.excluir()}"
-					update="painelDados tabela" />
-				<p:commandButton value="Editar"
-					actionListener="#{produtoBean.editar()}"
-					update="painelDados tabela" />
+					actionListener="#{produtoBean.salvar()}" update="painelDados tabela" />
+				<p:commandButton value="Deletar" actionListener="#{produtoBean.excluir()}" update="painelDados tabela" />
+				<p:commandButton value="Editar" actionListener="#{produtoBean.editar()}" update="painelDados tabela" />
 			</h:panelGrid>
 			<p:separator />
-			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado!"
-				paginator="true" value="#{produtoBean.produtos}" var="cursor">
+			<p:dataTable id="tabela" emptyMessage="Nenhum registro encontrado!" paginator="true" 
+						value="#{produtoBean.produtos}" var="cursor">
 				<p:column headerText="#" width="50">
 				<div align="center">
 					<h:outputText value="#{cursor.id}" /></div>

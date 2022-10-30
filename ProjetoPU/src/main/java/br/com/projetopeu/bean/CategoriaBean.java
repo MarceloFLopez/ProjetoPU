@@ -31,23 +31,24 @@ public class CategoriaBean implements Serializable {
 
 	public void salvar() {
 		categoriaDAO.save(categoria);
-		Messages.addGlobalInfo("Categoria salva com sucesso!" );
-		clean() ;
+		Messages.addGlobalInfo("Categoria salva com sucesso!");
+		clean();
 	}
-	
+
 	public void clean() {
 		categoria = new Categoria();
 		categoriaDAO = new CategoriaDAO();
 		categorias = categoriaDAO.list();
 	}
+
 	public void selecionar(Categoria categoriaSelecionado) {
 		categoria = categoriaSelecionado;
 	}
-	
+
 	public void editar() {
 		categoriaDAO.edit(categoria);
-		clean() ;
+		clean();
 		Messages.addGlobalInfo("Categoria editado com sucesso!");
 	}
-	
+
 }
