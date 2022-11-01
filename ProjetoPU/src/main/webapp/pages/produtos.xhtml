@@ -6,8 +6,7 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <h:head>
-	<link type="text/css" rel="stylesheet"
-		href="/resources/css/style.css" />
+	<link type="text/css" rel="stylesheet" href="/resources/css/style.css" />
 	<h:outputScript>
 	PrimeFaces.locales['pt_BR'] = {
     closeText: 'Fechar',
@@ -71,12 +70,20 @@
 					converter="omnifaces.SelectItemsConverter">
 					<f:selectItem itemDisabled="true" itemLabel="Selecione uma categoria" />
 					<f:selectItems value="#{produtoBean.categorias}" var="categoriaCursor"
-						itemLabel="#{categoriaCursor.id} - #{categoriaCursor.nome}" />
+						itemLabel="#{categoriaCursor.nome}" />
 				</p:selectOneMenu>
+			
+				<p:outputLabel value="Fabricante" />
+				<p:selectOneMenu size="100" value="#{produtoBean.produto.fabricante}"
+					converter="omnifaces.SelectItemsConverter">
+					<f:selectItem itemDisabled="true" itemLabel="Selecione um fabricante" />
+					<f:selectItems value="#{produtoBean.fabricantes}" var="fabricanteCursor"
+						itemLabel="#{fabricanteCursor.descricacao}" />
+				</p:selectOneMenu>
+				
 			</h:panelGrid>
 			<h:panelGrid columns="3" style="justify-content:center">
-				<p:commandButton value="Salvar"
-					actionListener="#{produtoBean.salvar()}" update="painelDados tabela" />
+				<p:commandButton value="Salvar" actionListener="#{produtoBean.salvar()}" update="painelDados tabela" />
 				<p:commandButton value="Deletar" actionListener="#{produtoBean.excluir()}" update="painelDados tabela" />
 				<p:commandButton value="Editar" actionListener="#{produtoBean.editar()}" update="painelDados tabela" />
 			</h:panelGrid>
@@ -111,7 +118,12 @@
 				<p:column headerText="Categoria" width="150">
 				<div align="center">
 					<h:outputText
-						value="#{cursor.categoria.id} #{cursor.categoria.nome}" /></div>
+						value="#{cursor.categoria.nome}" /></div>
+				</p:column>
+				<p:column headerText="Fabricante" width="150">
+				<div align="center">
+					<h:outputText
+						value="#{cursor.fabricante.descricacao}" /></div>
 				</p:column>
 				<p:column headerText="Editar" width="50">
 					<p:commandButton icon="pi-sync" style="width: 40px" heigth="30px"

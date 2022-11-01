@@ -12,6 +12,7 @@ import org.omnifaces.util.Messages;
 import br.com.projetopeu.dao.CategoriaDAO;
 import br.com.projetopeu.dao.ProdutoDAO;
 import br.com.projetopeu.model.Categoria;
+import br.com.projetopeu.model.Fabricante;
 import br.com.projetopeu.model.Produto;
 import lombok.Data;
 
@@ -24,6 +25,7 @@ public class ProdutoBean implements Serializable {
 
 	private Produto produto;
 	private List<Categoria> categorias;
+	private List<Fabricante> fabricantes;
 	private List<Produto> produtos;
 	private ProdutoDAO produtoDAO;
 

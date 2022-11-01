@@ -25,19 +25,15 @@
 					<p:outputLabel style="font-weight: bold;" value="| 2018© ~ 2021© " />
 					<img src="#{request.contextPath}/resources/images/prime.webp"
 						width="15" height="15" />
-					<p:outputLabel style="font-weight: bold; "
-						value=" EDICASE ORGANIZATION " />
+					<p:outputLabel style="font-weight: bold;" value=" EDICASE ORGANIZATION" />
 					<p:outputLabel value="| Building edicase.001-Beta 01.08.2022" />
 				</f:facet>
 			</p:layoutUnit>
 	
 			<p:layoutUnit position="center" closable="false" collapsible="falso">
-				<p:growl id="msj" showDetail="true" autoUpdate="true"
-					globalOnly="true" life="3000" />
-				<p:ajaxStatus onstart="PF('statusDialog').show()"
-					onsuccess="PF('statusDialog').hide()" />
-				<p:dialog widgetVar="statusDialog" modal="true" draggable="false"
-					closable="false" resizable="false" showHeader="false" dir="rtl">
+				<p:growl id="msj" showDetail="true" autoUpdate="true" globalOnly="true" life="3000" />
+				<p:ajaxStatus onstart="PF('statusDialog').show()" onsuccess="PF('statusDialog').hide()" />
+				<p:dialog widgetVar="statusDialog" modal="true" draggable="false" closable="false" resizable="false" showHeader="false" dir="rtl">
 					<p:graphicImage value="/resources/images/loadingg-bar.gif" />
 				</p:dialog>
 					

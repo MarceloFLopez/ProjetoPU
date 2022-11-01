@@ -1,60 +1,69 @@
 package testClass;
 
-import java.math.BigDecimal;
-import java.time.LocalDate;
 import java.util.List;
 
 import org.junit.Test;
 
-import br.com.projetopeu.dao.ProdutoDAO;
-import br.com.projetopeu.model.Produto;
+import br.com.projetopeu.dao.FabricanteDAO;
+import br.com.projetopeu.model.Fabricante;
 
 public class DAOTest {
 
-	ProdutoDAO dao = new ProdutoDAO();
-
+//	@Test
+//	@Ignore
+//	public void inciar() {
+//		FabricanteDAO dao = new FabricanteDAO();		
+//
+//		Fabricante f1 = new Fabricante();
+//		f1.setDescricacao("Fabricante 1");
+//
+//		Fabricante f2 = new Fabricante();
+//		f2.setDescricacao("Fabricante 2");
+//
+//		Fabricante f3 = new Fabricante();
+//		f3.setDescricacao("Fabricante 3");
+//
+//		dao.save(f1);
+//		dao.save(f2);
+//		dao.save(f3);
+//		
+//		List<Fabricante> list = dao.list();
+//		list.forEach(System.out::println);
+//		
+//		dao.deleteId(1l);
+//
+//		List<Fabricante> list1 = dao.list();
+//		list1.forEach(System.out::println);
+//	}
 
 	@Test
 	public void inciar() {
-		 find();
-		// findName();
-		// list();
-	}
+		FabricanteDAO dao = new FabricanteDAO();
+		// save
+//		Fabricante f1 = new Fabricante();
+//		f1.setDescricacao("Fabricante 1");
+//
+//		Fabricante f2 = new Fabricante();
+//		f2.setDescricacao("Fabricante 2");
+//
+//		dao.save(f1);
+//		dao.save(f2);
 
-	public void find() {
-		Produto p3 = dao.findId(1l);
-		Produto p4 = dao.findId(2l);
-		System.out.println(p3);
-		System.out.println(p4);
-	}
-
-	public void save() {
-		Produto p1 = new Produto();
-		Produto p2 = new Produto();
-		p1.setNome("Coca Cola 2L");
-		p1.setPreco(BigDecimal.valueOf(10.00));
-		p1.setDataValidade(LocalDate.of(2022, 10, 10));
-		p1.setQuantidade(10);
-		p1.calculaValorEstoque(p1.getPreco(), p1.getQuantidade());
-
-		p2.setNome("Heiniken 800ml");
-		p2.setPreco(BigDecimal.valueOf(8.00));
-		p2.setDataValidade(LocalDate.of(2022, 8, 30));
-		p2.setQuantidade(8);
-		p2.calculaValorEstoque(p2.getPreco(), p2.getQuantidade());
-		dao.save(p1);
-		dao.save(p2);
-	}
-
-	public void list() {
-		List<Produto> list = dao.list();
+		// list
+		List<Fabricante> list = dao.list();
 		list.forEach(System.out::println);
-	}
 
-	public void findName() {
-		Produto p = new Produto();
-		p = dao.findName("Heiniken 800ml");
-		System.out.println(p);
+		// delete
+//		dao.deleteId(1l);
+
+		// update
+		Fabricante f3 = dao.findId(1l);
+		f3.setDescricacao("Teste");
+		dao.edit(f3);
+
+		// list
+		List<Fabricante> list1 = dao.list();
+		list1.forEach(System.out::println);
 	}
 
 }
