@@ -5,6 +5,7 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
+import br.com.projetopeu.model.Fabricante;
 import br.com.projetopeu.model.Funcionario;
 import br.com.projetopeu.util.JPAUTil;
 
@@ -24,6 +25,18 @@ public class FuncionarioDAO {
 		}
 	}
 
+	public void deleteFbricante(Fabricante f) {
+		try {
+			em.getTransaction().begin();
+			em.remove(f);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.clear();
+			em.close();
+			throw e;
+		}
+	}	
+	
 	public void deleteId(Long id) {
 		try {
 			em.getTransaction().begin();
@@ -67,6 +80,13 @@ public class FuncionarioDAO {
 		EntityManager em = JPAUTil.getEntityManager();
 		Query query = em.createQuery("SELECT p FROM Funcionario p WHERE p.nome = :nome");
 		Funcionario p = (Funcionario) query.setParameter("nome", nome).getSingleResult();
+		return p;
+	}
+	
+	public Funcionario findC(String cpf) {
+		EntityManager em = JPAUTil.getEntityManager();
+		Query query = em.createQuery("SELECT p FROM Funcionario p WHERE p.cpf = :cpf");
+		Funcionario p = (Funcionario) query.setParameter("cpf", cpf).getSingleResult();
 		return p;
 	}
 

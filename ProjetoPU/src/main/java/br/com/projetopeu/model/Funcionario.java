@@ -8,8 +8,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.validation.constraints.NotBlank;
-import javax.validation.constraints.NotNull;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -28,25 +26,25 @@ public class Funcionario implements Serializable {
 	private Long id;
 	
 	@Column(length = 50, nullable = false)
-	@NotBlank(message = "O campo nome é obrigatório!")
+	//@NotBlank(message = "O campo nome é obrigatório!")
 	private String nome;
 	
 	@Column(length = 11, nullable = false,unique = true)
-	@NotBlank(message = "O campo nome é obrigatório!")
+	//@NotBlank(message = "O campo nome é obrigatório!")
 	private String cpf;
 	
 	@Column(length = 11, nullable = false,unique = true)
-	@NotBlank(message = "O campo telefone é obrigatório!")
+	//@NotBlank(message = "O campo telefone é obrigatório!")
 	private String telefone;
 	
 	@Column(length = 32, nullable = false)
-	@NotBlank(message = "O campo nome é obrigatório!")
+	//@NotBlank(message = "O campo nome é obrigatório!")
 	private String senha;
 	
 	@Column(length = 50, nullable = false)
-	@NotBlank(message = "O campo nome é obrigatório!")
-	private String funcaao;
+	//@NotBlank(message = "O campo nome é obrigatório!")
+	private String funcao;
 	
-	@NotNull(message = "O campo data de nascimento é obrigatório!")
+	//@NotNull(message = "O campo data de nascimento é obrigatório!")
 	private LocalDate dataNascimento;
 }
