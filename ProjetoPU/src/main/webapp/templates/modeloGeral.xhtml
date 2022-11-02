@@ -38,28 +38,30 @@
 			<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
 		</p:layoutUnit>
 
-		<p:layoutUnit position="west" size="300" header="MENU"
-			sresizable="false" collapsible="true">
+		<p:layoutUnit position="west" size="300" icon="ui-icon-home"
+			header="MENU" sresizable="false" collapsible="true">
+
 			<h:form>
 				<p:panelMenu>
 					<p:submenu label="Arquivo">
-						<p:menuitem value="Principal" outcome="/templates/modeloGeral.xhtml"/>
-						<p:menuitem value="Sair" />
+						<p:menuitem icon="ui-icon-home" value="Principal"
+							outcome="/templates/modeloGeral.xhtml" />
+						<p:menuitem icon="ui-icon-closethick" value="Sair" />
 					</p:submenu>
-					<p:submenu label="Cadastros">
-						<p:menuitem value="Catetorias" />
-						<p:menuitem value="Fabricantes" />
-						<p:menuitem value="Produtos" />
-						<p:menuitem value="Funcionarios" />
+					<p:submenu  label="Cadastros">
+						<p:menuitem icon="ui-icon-note" value="Catetorias" />
+						<p:menuitem icon="ui-icon-clipboard" value="Fabricantes" />
+						<p:menuitem icon="ui-icon-plus" value="Produtos" />
+						<p:menuitem icon="ui-icon-person" value="Funcionarios" />
 					</p:submenu>
 					<p:submenu label="Vendas">
+						<p:menuitem icon="ui-icon-cart" value="Faturamento" />
 					</p:submenu>
 				</p:panelMenu>
 			</h:form>
 		</p:layoutUnit>
 
-		<p:layoutUnit position="center" header="BODY" resizable="false"
-			collapsible="false">
+		<p:layoutUnit position="center" resizable="false" collapsible="false">
 			<ui:insert name="conteudo" />
 		</p:layoutUnit>
 	</p:layout>
