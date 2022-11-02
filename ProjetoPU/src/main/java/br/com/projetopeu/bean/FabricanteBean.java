@@ -50,5 +50,6 @@ public class FabricanteBean implements Serializable {
 		clean();
 		Messages.addGlobalInfo("Fabricante editado com sucesso!");
 	}
+	
 
 }

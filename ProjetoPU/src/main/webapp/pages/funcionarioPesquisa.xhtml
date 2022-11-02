@@ -8,25 +8,42 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
+
 		<h:form>
-		
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Fabricanetes" />
+					<h:outputText value="Funcionários" />
 				</f:facet>
 			</p:toolbar>
 
 			<h:panelGrid columns="2">
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30" />
+				<p:outputLabel value="Nome" />
+				<p:inputText maxlength="50" size="40" />
+				
+				<p:outputLabel value="CPF:" />
+				<p:inputMask mask="999.999.999-99" size="12" />
+				
+				<p:outputLabel value="Função:" />
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Selecione uma função"/>
+					<f:selectItem itemLabel="Adminstriador"/>
+					<f:selectItem itemLabel="Gerente"/>
+					<f:selectItem itemLabel="Balconista"/>
+				</p:selectOneMenu>
+			</h:panelGrid>
+			<h:panelGrid columns="2">
 				<p:commandButton value="Buscar" />
-				<p:commandButton value="Novo" action="/pages/fabricanteCadastro.xhtml?faces-redirect=true"  />
+				<p:commandButton value="Novo"
+					action="/pages/funcionarioCadastro.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado!">
 				<p:column headerText="ID" />
 				<p:inputText maxlength="50" size="30" />
-				<p:column headerText="Descrição"></p:column>
+
+				<p:column headerText="Nome"></p:column>
+				<p:column headerText="Cpf"></p:column>
+				<p:column headerText="Função"></p:column>
 				<p:column headerText="Opções"></p:column>
 			</p:dataTable>
 		</h:form>

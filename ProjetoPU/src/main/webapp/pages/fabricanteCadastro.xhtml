@@ -7,6 +7,29 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/templates/modeloGeral.xhtml">
-	
+	<ui:define name="conteudo">
+		<h:form>
+			<p:toolbar>
+				<f:facet name="left">
+					<h:outputText value="Pesquisar de Fabricantes" />
+				</f:facet>
+			</p:toolbar>
+
+			<h:panelGrid columns="2">
+				<p:outputLabel value="ID:" />
+				<p:inputText maxlength="10" size="4" readonly="true" />
+				
+				<p:outputLabel value="Descrição:" />
+				<p:inputText maxlength="50" size="30" />
+			</h:panelGrid>
+			
+			<h:panelGrid columns="3">
+				<p:commandButton value="Novo" />
+				<p:commandButton value="Salvar" />
+				<p:commandButton value="Voltar" action="/pages/fabricantePesquisa.xhtml?faces-redirect=true" />
+			</h:panelGrid>
+		</h:form>
+
+	</ui:define>
 </ui:composition>
 </html>

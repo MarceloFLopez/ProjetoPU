@@ -43,12 +43,6 @@ public class ProdutoBean implements Serializable {
 		Messages.addGlobalInfo("Produto salvo com sucesso!");
 	}
 
-	public void excluir() {
-		produtoDAO.deleteId(produto.getId());
-		clean();
-		Messages.addGlobalInfo("Produto removido com sucesso!");
-	}
-
 	public void selecionar(Produto produtoSelecionado) {
 		produto = produtoSelecionado;
 	}

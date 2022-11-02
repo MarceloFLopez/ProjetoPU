@@ -50,5 +50,7 @@ public class CategoriaBean implements Serializable {
 		clean();
 		Messages.addGlobalInfo("Categoria editado com sucesso!");
 	}
+	
+	
 
 }
