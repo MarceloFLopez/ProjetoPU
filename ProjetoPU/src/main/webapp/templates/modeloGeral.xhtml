@@ -6,34 +6,62 @@
 	xmlns:p="http://primefaces.org/ui"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
-<ui:insert name="metadata"/>
+<ui:insert name="metadata" />
 <h:head>
-	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/style.css" />
-	<link rel="shortcut icon" type="image/webp" href="#{request.contextPath}/resources/images/prime.webp" />	
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>App Teste Edicase</title>
+	<link type="text/css" rel="stylesheet"
+		href="#{request.contextPath}/resources/css/style.css" />
+	<link rel="shortcut icon" type="image/webp"
+		href="#{request.contextPath}/resources/images/prime.webp" />
+	<title>Loja</title>
 </h:head>
-<h:body style="font-size: 14px">
-	<p:layout fullPage="true">
-		<p:layoutUnit style="zoom: 108% !important;"
-			header="EDICASE APP"
-			position="north" closable="false" 
-			collapsible="falso">
-		</p:layoutUnit>
-		<p:layoutUnit style="font-size: 10px; text-align:right"
-			position="south" resizable="false" closable="false"
-			collapsible="falso">
-			<f:facet name="footer">
-				<p:link href="https://edicase.com.br" style="font-weight: bold;">https://edicase.com.br </p:link>								
-				<p:outputLabel style="font-weight: bold;" value="| 2018© ~ 2021© " />
-				<img src="#{request.contextPath}/resources/images/prime.webp" width="15" height="15"/>
-				<p:outputLabel style="font-weight: bold; " value=" EDICASE ORGANIZATION " />
-				<p:outputLabel value="| Building edicase.001-Beta 01.08.2022" />
-			</f:facet>
-		</p:layoutUnit>
-		<p:layoutUnit position="center" closable="false" collapsible="falso">
-						
-		</p:layoutUnit>
-	</p:layout>
+<h:body>
+	<h:form>
+		<p:growl>
+			<p:autoUpdate />
+		</p:growl>
+		<p:layout fullPage="true">
+			<p:layoutUnit position="north" header="Sistema de Gestão de Vendas"
+				resizable="false" collapsible="false" size="40" style="text-align:center ">
+			</p:layoutUnit>
+
+			<p:layoutUnit position="south" size="40"
+				style="font-size: 10px; text-align:right ">
+				<img src="#{request.contextPath}/resources/images/prime.webp"
+					width="15" height="15" />
+				<p:link href="https://github.com/MarceloFLopez"
+					style="font-weight: bold;">GITHUB</p:link>
+				<p:outputLabel style="font-weight: bold;" value="| 2022© ~ 2022© " />
+				<p:outputLabel style="font-weight: bold;"
+					value="By MARCELO ORGANIZATION " />
+				<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
+			</p:layoutUnit>
+
+			<p:layoutUnit position="west" size="300" header="MENU"
+				resizable="false" collapsible="true">
+				<p:panelMenu>
+					<p:submenu label="Arquivo">
+						<p:menuitem value="Principal" />
+						<p:menuitem value="Sair" />
+					</p:submenu>
+					<p:submenu label="Cadastros">
+						<p:menuitem value="Catetorias" />
+						<p:menuitem value="Fabricantes" />
+						<p:menuitem value="Funcionarios" />
+						<p:menuitem value="Produtos" />
+					</p:submenu>
+					<p:submenu label="Vendas">
+						<p:menuitem value="Vendas" />
+					</p:submenu>
+				</p:panelMenu>
+			</p:layoutUnit>
+
+			<p:layoutUnit position="center" header="BODY" resizable="false"
+				collapsible="false">
+				<ui:insert name="conteudo" />
+			</p:layoutUnit>
+
+		</p:layout>
+	</h:form>
 </h:body>
 </html>

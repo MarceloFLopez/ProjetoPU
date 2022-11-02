@@ -10,6 +10,7 @@ import javax.inject.Named;
 import org.omnifaces.util.Messages;
 
 import br.com.projetopeu.dao.CategoriaDAO;
+import br.com.projetopeu.dao.FabricanteDAO;
 import br.com.projetopeu.dao.ProdutoDAO;
 import br.com.projetopeu.model.Categoria;
 import br.com.projetopeu.model.Fabricante;
@@ -25,11 +26,11 @@ public class ProdutoBean implements Serializable {
 
 	private Produto produto;
 	private List<Categoria> categorias;
-	private List<Fabricante> fabricantes;
 	private List<Produto> produtos;
+	private List<Fabricante> fabricantes;
 	private ProdutoDAO produtoDAO;
-
 	private CategoriaDAO categoriaDAO;
+	private FabricanteDAO fabricanteDAO;
 
 	@PostConstruct
 	public void iniciar() {
@@ -51,10 +52,10 @@ public class ProdutoBean implements Serializable {
 	public void selecionar(Produto produtoSelecionado) {
 		produto = produtoSelecionado;
 	}
-	
+
 	public void editar() {
 		produtoDAO.edit(produto);
-		clean() ;
+		clean();
 		Messages.addGlobalInfo("Produto editado com sucesso!");
 	}
 
