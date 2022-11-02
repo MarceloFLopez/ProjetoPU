@@ -16,52 +16,53 @@
 	<title>Loja</title>
 </h:head>
 <h:body>
-	<h:form>
-		<p:growl>
-			<p:autoUpdate />
-		</p:growl>
-		<p:layout fullPage="true">
-			<p:layoutUnit position="north" header="Sistema de Gestão de Vendas"
-				resizable="false" collapsible="false" size="40" style="text-align:center ">
-			</p:layoutUnit>
 
-			<p:layoutUnit position="south" size="40"
-				style="font-size: 10px; text-align:right ">
-				<img src="#{request.contextPath}/resources/images/prime.webp"
-					width="15" height="15" />
-				<p:link href="https://github.com/MarceloFLopez"
-					style="font-weight: bold;">GITHUB</p:link>
-				<p:outputLabel style="font-weight: bold;" value="| 2022© ~ 2022© " />
-				<p:outputLabel style="font-weight: bold;"
-					value="By MARCELO ORGANIZATION " />
-				<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
-			</p:layoutUnit>
+	<p:growl>
+		<p:autoUpdate />
+	</p:growl>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" header="Sistema de Gestão de Vendas"
+			resizable="false" collapsible="false" size="40"
+			style="text-align:center ">
+		</p:layoutUnit>
 
-			<p:layoutUnit position="west" size="300" header="MENU"
-				resizable="false" collapsible="true">
+		<p:layoutUnit position="south" size="40"
+			style="font-size: 10px; text-align:right ">
+			<img src="#{request.contextPath}/resources/images/prime.webp"
+				width="15" height="15" />
+			<p:link href="https://github.com/MarceloFLopez"
+				style="font-weight: bold;">GITHUB</p:link>
+			<p:outputLabel style="font-weight: bold;" value="| 2022© ~ 2022© " />
+			<p:outputLabel style="font-weight: bold;"
+				value="By MARCELO ORGANIZATION " />
+			<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
+		</p:layoutUnit>
+
+		<p:layoutUnit position="west" size="300" header="MENU"
+			sresizable="false" collapsible="true">
+			<h:form>
 				<p:panelMenu>
 					<p:submenu label="Arquivo">
-						<p:menuitem value="Principal" />
+						<p:menuitem value="Principal" outcome="/templates/modeloGeral.xhtml"/>
 						<p:menuitem value="Sair" />
 					</p:submenu>
 					<p:submenu label="Cadastros">
 						<p:menuitem value="Catetorias" />
 						<p:menuitem value="Fabricantes" />
-						<p:menuitem value="Funcionarios" />
 						<p:menuitem value="Produtos" />
+						<p:menuitem value="Funcionarios" />
 					</p:submenu>
 					<p:submenu label="Vendas">
-						<p:menuitem value="Vendas" />
 					</p:submenu>
 				</p:panelMenu>
-			</p:layoutUnit>
+			</h:form>
+		</p:layoutUnit>
 
-			<p:layoutUnit position="center" header="BODY" resizable="false"
-				collapsible="false">
-				<ui:insert name="conteudo" />
-			</p:layoutUnit>
+		<p:layoutUnit position="center" header="BODY" resizable="false"
+			collapsible="false">
+			<ui:insert name="conteudo" />
+		</p:layoutUnit>
+	</p:layout>
 
-		</p:layout>
-	</h:form>
 </h:body>
 </html>
