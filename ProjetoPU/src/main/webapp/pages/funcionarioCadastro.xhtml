@@ -8,7 +8,43 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
+		<h:form>
+			<p:toolbar>
+				<f:facet name="left">
+					<h:outputText value="Funcionários" />
+				</f:facet>
+			</p:toolbar>
 
+			<h:panelGrid columns="2">
+				<p:outputLabel value="ID" />
+				<p:inputText maxlength="10" readonly="true" />
+
+				<p:outputLabel value="Nome" />
+				<p:inputText maxlength="50" size="30" />
+
+				<p:outputLabel value="CPF:" />
+				<p:inputMask mask="999.999.999-99" size="12" />
+
+				<p:outputLabel value="Função:" />
+			
+				<p:selectOneMenu>
+					<f:selectItem itemLabel="Selecione uma função" />
+					<f:selectItem itemLabel="Adminstriador" />
+					<f:selectItem itemLabel="Gerente" />
+					<f:selectItem itemLabel="Balconista" />
+				</p:selectOneMenu>
+
+				<p:outputLabel value="Senha: " />
+				<p:password maxlength="8" size="10" />
+			</h:panelGrid>
+			<h:panelGrid columns="3">
+				<p:commandButton value="Novo" />
+				<p:commandButton value="Salvar"
+					actionListener="#{funcionarioBean.salvar()}" />
+				<p:commandButton value="Voltar"
+					action="/pages/funcionarioPesquisa.xhtml?faces-redirect=true" />
+			</h:panelGrid>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

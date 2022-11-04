@@ -8,7 +8,6 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
-
 		<h:form>
 			<p:toolbar>
 				<f:facet name="left">
@@ -16,9 +15,9 @@
 				</f:facet>
 			</p:toolbar>
 
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="6">
 				<p:outputLabel value="Nome" />
-				<p:inputText maxlength="50" size="40" />
+				<p:inputText maxlength="40" size="30" />
 				
 				<p:outputLabel value="CPF:" />
 				<p:inputMask mask="999.999.999-99" size="12" />
@@ -40,7 +39,6 @@
 			<p:dataTable emptyMessage="Nenhum registro encontrado!">
 				<p:column headerText="ID" />
 				<p:inputText maxlength="50" size="30" />
-
 				<p:column headerText="Nome"></p:column>
 				<p:column headerText="Cpf"></p:column>
 				<p:column headerText="Função"></p:column>

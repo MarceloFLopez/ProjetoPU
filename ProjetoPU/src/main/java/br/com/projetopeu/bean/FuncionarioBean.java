@@ -13,12 +13,12 @@ import lombok.Data;
 @ViewScoped
 @ManagedBean
 @Data
-public class FabricanteBean implements Serializable {
+public class FuncionarioBean implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
 	public void salvar() {
-		FacesUtil.addMsgInfo("Fabricante Salvo com sucesso!");
+		FacesUtil.addMsgInfo("Funcionario Salvo com sucesso!");
 	}
 
 
