@@ -8,26 +8,34 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
+		<f:event listener="#{fabricanteBean.carregar()}" type="preRenderView" />
 		<h:form>
-		
 			<p:toolbar>
 				<f:facet name="left">
 					<h:outputText value="Fabricanetes" />
 				</f:facet>
 			</p:toolbar>
 
-			<h:panelGrid columns="2">
+			<h:panelGrid columns="6">
 				<p:outputLabel value="Descrição:" />
 				<p:inputText maxlength="50" size="30" />
 				<p:commandButton value="Buscar" />
-				<p:commandButton value="Novo" action="/pages/fabricanteCadastro.xhtml?faces-redirect=true"  />
+				<p:commandButton value="Novo"
+					action="/pages/fabricanteCadastro.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 
-			<p:dataTable emptyMessage="Nenhum registro encontrado!">
-				<p:column headerText="ID" />
-				<p:inputText maxlength="50" size="30" />
-				<p:column headerText="Descrição"></p:column>
-				<p:column headerText="Opções"></p:column>
+			<p:dataTable emptyMessage="Nenhum registro encontrado!"
+				value="#{fabricanteBean.listafabricantes}"
+				filteredValue="#{fabricanteBean.listaFabricantesFiltrado}"
+				var="fabricanteCursor">
+				<p:column headerText="ID" filterBy="#{fabricanteCursor.id}" sortBy="#{fabricanteCursor.id}" width="5%" style="font-size:15px">
+					<h:outputText value="#{fabricanteCursor.id}" style="text-align:center"/>
+				</p:column>
+				<p:column headerText="Descrição" filterBy="#{fabricanteCursor.descricao}" sortBy="#{fabricanteCursor.descricao}" style="font-size:15px">
+					<h:outputText value="#{fabricanteCursor.descricao}" />
+				</p:column>
+				<p:column headerText="Opções" width="10%" style="font-size:15px">
+				</p:column>
 			</p:dataTable>
 		</h:form>
 	</ui:define>

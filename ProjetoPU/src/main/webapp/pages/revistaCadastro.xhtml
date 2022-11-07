@@ -11,26 +11,25 @@
 		<h:form id="painelDados">
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Pesquisar de Fabricantes" />
+					<h:outputText value="Pesquisar de Revistas" />
 				</f:facet>
 			</p:toolbar>
 
-			<h:panelGrid columns="2" id="pnlFrabicanteDados">
+			<h:panelGrid columns="6" id="pnlRevistaDados">
 				<p:outputLabel value="ID:" />
-				<p:inputText maxlength="10" size="4" readonly="true"
-					value="#{fabricanteBean.fabricanteCadastro.id}" />
-
+				<p:inputText maxlength="10" size="4" readonly="true" />
+				
 				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30"
-					value="#{fabricanteBean.fabricanteCadastro.descricao}" />
+				<p:inputText maxlength="50" size="30" />
+				
+				<p:outputLabel value="EAN" />
+				<p:inputText maxlength="50" size="30" />
 			</h:panelGrid>
-
-			<h:panelGrid columns="3">
-				<p:commandButton value="Limpar"	actionListener="#{fabricanteBean.novo()}" update=":painelDados" />
-				<p:commandButton value="Salvar" actionListener="#{fabricanteBean.salvar()}" update=":painelDados" />
-				<h:panelGrid columns="1" style="text-decoration:none">
-					<a href="../pages/fabricantePesquisa.xhtml">Voltar</a>
-				</h:panelGrid>
+			
+			<h:panelGrid columns="3"  >
+				<p:commandButton value="Novo" />
+				<p:commandButton value="Salvar"   update=":painelDados"/>
+				<p:commandButton value="Voltar" action="/pages/revistaPesquisa.xhtml?faces-redirect=true"/>
 			</h:panelGrid>
 		</h:form>
 
