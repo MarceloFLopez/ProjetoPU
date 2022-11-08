@@ -11,7 +11,7 @@
 		<h:form id="painelDados">
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Pesquisar de Fabricantes" />
+					<h:outputText value="Cadastrar Fabricante" />
 				</f:facet>
 			</p:toolbar>
 
@@ -28,7 +28,7 @@
 			<h:panelGrid columns="3">
 				<p:commandButton value="Limpar"	actionListener="#{fabricanteBean.novo()}" update=":painelDados" />
 				<p:commandButton value="Salvar" actionListener="#{fabricanteBean.salvar()}" update=":painelDados" />
-				<h:panelGrid columns="1" style="text-decoration:none">
+				<h:panelGrid style="text-decoration:none">
 					<a href="../pages/fabricantePesquisa.xhtml">Voltar</a>
 				</h:panelGrid>
 			</h:panelGrid>

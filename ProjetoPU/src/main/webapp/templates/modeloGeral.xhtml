@@ -9,36 +9,29 @@
 <ui:insert name="metadata" />
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<link type="text/css" rel="stylesheet"
-		href="#{request.contextPath}/resources/css/style.css" />
-	<link rel="shortcut icon" type="image/webp"
-		href="#{request.contextPath}/resources/images/prime.webp" />
-	<title>Loja</title>
+	<link type="text/css" rel="stylesheet" href="#{request.contextPath}/resources/css/style.css" />
+	<link rel="shortcut icon" type="image/webp" href="#{request.contextPath}/resources/images/prime.webp" />
+	<title>App</title>	
 </h:head>
 <h:body>
 	<p:growl>
 		<p:autoUpdate />
 	</p:growl>
 	<p:layout fullPage="true">
-		<p:layoutUnit position="north" header="Sistema de Gestão de Vendas"
-			resizable="false" collapsible="false" style="text-align:center ">
+		<p:layoutUnit position="north" header="Sistema de Gestão de Vendas" esizable="false" collapsible="false" style="text-align:center ">
 		</p:layoutUnit>
-		<p:layoutUnit position="south" size="25"
-			style="font-size: 10px; text-align:right ">
-			<p:outputLabel style="font-weight: bold;"
-				value=" By MARCELO ORGANIZATION© " />
+		<p:layoutUnit position="south" size="25" style="font-size: 10px; text-align:right ">
+			<p:outputLabel style="font-weight: bold;" value=" By MARCELO ORGANIZATION© " />
 			<p:outputLabel style="font-weight: bold;" value=" | 2022 ~ 2022 " />
 			<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
 		</p:layoutUnit>
 
-		<p:layoutUnit position="west" size="auto" header="MENU"
-			sresizable="false" collapsible="true">
+		<p:layoutUnit position="west" size="auto" header="MENU" sresizable="false" collapsible="true">
 
 			<h:form>
 				<p:panelMenu>
 					<p:submenu label="Arquivo">
-						<p:menuitem icon="ui-icon-home" value="Principal"
-							outcome="/templates/modeloGeral.xhtml" />
+						<p:menuitem icon="ui-icon-home" value="Principal" outcome="/templates/modeloGeral.xhtml" />
 						<p:menuitem icon="ui-icon-closethick" value="Sair" />
 					</p:submenu>
 					<p:submenu label="Cadastros">

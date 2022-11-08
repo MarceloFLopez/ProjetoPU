@@ -35,7 +35,7 @@ public class FabricanteBean implements Serializable {
 			novo();
 			FacesUtil.addMsgInfo("Fabricante Salvo com sucesso!");
 		} catch (RuntimeException e) {
-			FacesUtil.addMsgError("Fabricante já esta cadastrado!"+e.getMessage());
+			FacesUtil.addMsgError("Fabricante já esta cadastrado!");
 		}
 	}
 	

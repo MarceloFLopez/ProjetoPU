@@ -62,7 +62,7 @@ public class FabricanteDAO {
 	@SuppressWarnings("unchecked")
 	public List<Fabricante> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Fabricante p ORDER BY descricao ASC");
+		Query query = em.createQuery("SELECT p FROM Fabricante p ORDER BY p.id");
 		List<Fabricante> list = query.getResultList();
 		return list;
 	}
