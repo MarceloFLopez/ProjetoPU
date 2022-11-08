@@ -7,43 +7,89 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
 
 <ui:composition template="/templates/modeloGeral.xhtml">
+	<ui:define name="metadata">
+		<f:metadata>
+			<f:event listener="#{revistaBean.carregar()}" type="preRenderView" />
+		</f:metadata>
+	</ui:define>
 	<ui:define name="conteudo">
-		<h:form>
-			<p:toolbar>
-				<f:facet name="left">
-					<h:outputText value="Funcionários" />
-				</f:facet>
-			</p:toolbar>
+		
+			<h:form>
+				<p:toolbar>
+					<f:facet name="left">
+						<h:outputText value="Revistas" style="text-size:15px"/>
+					</f:facet>
+				</p:toolbar>
 
-			<h:panelGrid columns="6">
-				<p:outputLabel value="Nome" />
-				<p:inputText maxlength="40" size="30" />
+				<h:panelGrid>
+					<p:outputLabel />
+					<p:commandButton value="Novo " icon="ui-icon-circle-plus"
+						action="/pages/revistaCadastro.xhtml?faces-redirect=true" />
+				</h:panelGrid>
 
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30" />
+				<p:dataTable emptyMessage="Nenhum registro encontrado!"
+					value="#{revistaBean.listarevistas}"
+					filteredValue="#{revistaBean.listaRevistasFiltrado}"
+					paginator="true" rows="15" var="revistaCursor">
+					<p:column headerText="ID" width="3%" style="text-align:center">
+						<h:outputText value="#{revistaCursor.id}" />
+					</p:column>
 
-				<p:outputLabel value="EAN" />
-				<p:inputText maxlength="50" size="30" />
+					<p:column headerText="Edição" filterBy="#{revistaCursor.edicao}"
+						width="3%" style="text-align:center">
+						<h:outputText value="#{revistaCursor.edicao}" />
+					</p:column>
 
-			</h:panelGrid>
-			<h:panelGrid columns="2">
-				<p:commandButton value="Buscar" />
-				<p:commandButton value="Novo"
-					action="/pages/revistaCadastro.xhtml?faces-redirect=true" />
-			</h:panelGrid>
+					<p:column headerText="Titulo"
+						filterBy="#{revistaCursor.titulo.toUpperCase()}">
+						<h:outputText value="#{revistaCursor.titulo.toUpperCase()}" />
+					</p:column>
 
-			<p:dataTable emptyMessage="Nenhum registro encontrado!">
-				<p:column headerText="ID" width="25" />
-				<p:column headerText="Desecrição do Titulo"></p:column>
-				<p:column headerText="Titulo Original"></p:column>
-				<p:column headerText="Desecrição"></p:column>
-				<p:column headerText="Palavra chave"></p:column>
-				<p:column headerText="Autor"></p:column>
-				<p:column headerText="EAN"></p:column>
-				<p:column headerText="Função"></p:column>
-				<p:column headerText="OP" width="25"></p:column>
-			</p:dataTable>
-		</h:form>
+					<p:column headerText="Autor"
+						filterBy="#{revistaCursor.autor.nome.toUpperCase()}">
+						<h:outputText value="#{revistaCursor.autor.nome.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Categoria"
+						filterBy="#{revistaCursor.categoria.nome.toUpperCase()}">
+						<h:outputText
+							value="#{revistaCursor.categoria.nome.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Editora"
+						filterBy="#{revistaCursor.editora.nome.toUpperCase()}">
+						<h:outputText value="#{revistaCursor.editora.nome.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Chamada Principal"
+						filterBy="#{revistaCursor.chamadaPrincipal.toUpperCase()}">
+						<h:outputText
+							value="#{revistaCursor.chamadaPrincipal.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Palavra Chave"
+						filterBy="#{revistaCursor.palavraChave.toUpperCase()}">
+						<h:outputText value="#{revistaCursor.palavraChave.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Chamada Principal"
+						filterBy="#{revistaCursor.chamadaPrincipal.toUpperCase()}">
+						<h:outputText
+							value="#{revistaCursor.chamadaPrincipal.toUpperCase()}" />
+					</p:column>
+
+					<p:column headerText="Opções" width="5%"
+						style=" text-align:center">
+						<p:commandButton icon="ui-icon-pencil" style="margin-rigth:2%" />
+						<p:commandButton icon="ui-icon-trash" style="margin-left:2%" />
+					</p:column>
+				</p:dataTable>
+			</h:form>
 	</ui:define>
 </ui:composition>
 </html>
+
+
+
+
+

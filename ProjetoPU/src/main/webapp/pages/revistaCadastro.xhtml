@@ -8,28 +8,82 @@
 
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="conteudo">
-		<h:form id="painelDados">
+		<h:form id="painelDados" >
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Pesquisar de Revistas" />
+					<h:outputText value="Cadastro de revistas" />
 				</f:facet>
 			</p:toolbar>
 
-			<h:panelGrid columns="6" id="pnlRevistaDados">
+			<h:panelGrid columns="2" id="pnlRevistasDados">
 				<p:outputLabel value="ID:" />
-				<p:inputText maxlength="10" size="4" readonly="true" />
+				<p:inputText maxlength="1" size="1" readonly="true" value="#{revistaBean.revistaCadastro.id}" />
+					
+				<p:outputLabel value="Edição:" /> 
+				<p:inputText maxlength="4" size="1" value="#{revistaBean.revistaCadastro.edicao}" />
+
+				<p:outputLabel value="Titulo:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.titulo}" />
 				
-				<p:outputLabel value="Descrição:" />
-				<p:inputText maxlength="50" size="30" />
+				<p:outputLabel value="Autor:" />
+				<p:inputText  maxlength="50" size="40"  />
 				
-				<p:outputLabel value="EAN" />
-				<p:inputText maxlength="50" size="30" />
+				<p:outputLabel value="Categoria:" />
+				<p:inputText  maxlength="50" size="40"  />				
+
+				<p:outputLabel value="Editora:" />
+				<p:inputText  maxlength="50" size="40"  />
+					
+				<p:outputLabel value="Chamada Principal:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.chamadaPrincipal}" />	
+					
+				<p:outputLabel value="Descrição:" />				
+				<p:inputTextarea rows="2" cols="42" value="#{revistaBean.revistaCadastro.descricao}" size="1024"/>
+				
+				<p:outputLabel value="Palavra Chave:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.palavraChave}" />	
+				
+				<p:outputLabel value="Numero de Páginas:" />
+				<p:inputText  maxlength="4" size="1" value="#{revistaBean.revistaCadastro.numerPaginas}" />
+				
+				<p:outputLabel value="Códig de Barras:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.codigoBarras}" />
+				
+				<p:outputLabel value="EAN Digital:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.eanDigital}" />									
+				
+				<p:outputLabel value="ISBN:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.isbn}" />
+				
+				<p:outputLabel value="ISSN:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.issn}" />
+
+				<p:outputLabel value="Código Bisac" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.codigBisac}" />
+
+				<p:outputLabel value="Descrição Bisac:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.descricaoBisac}" />
+
+				<p:outputLabel value="Preço da capa:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.precoCapa}" />
+				
+				<p:outputLabel value="Periodicidade:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.periodicidade}" />				
+
+				<p:outputLabel value="EPUB:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.epub}" />
+																											
 			</h:panelGrid>
 			
-			<h:panelGrid columns="3"  >
-				<p:commandButton value="Novo" />
-				<p:commandButton value="Salvar"   update=":painelDados"/>
-				<p:commandButton value="Voltar" action="/pages/revistaPesquisa.xhtml?faces-redirect=true"/>
+
+			<h:panelGrid columns="10">
+				<p:commandButton value="Limpar"	actionListener="#{revistaBean.novo()}" update=":painelDados" />
+				<p:commandButton value="Salvar" actionListener="#{revistaBean.salvar()}" update=":painelDados" />
+				<p:commandButton value="Excluir"  />
+				<p:commandButton value="Editar" />
+				<h:panelGrid style="text-decoration:none">
+					<a href="../pages/revistaPesquisa.xhtml">Voltar</a>
+				</h:panelGrid>
 			</h:panelGrid>
 		</h:form>
 

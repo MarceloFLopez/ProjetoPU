@@ -7,15 +7,16 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Entity
+@Data
 @NoArgsConstructor
 @AllArgsConstructor
-@Data
 public class Autor implements Serializable{
 
 	private static final long serialVersionUID = 1L;
@@ -24,7 +25,8 @@ public class Autor implements Serializable{
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 	
-	@Column(length = 50, nullable = false,unique = true)
+	@Column(length = 50, unique = true, nullable = false)
+	@NotBlank(message = "O descrição quantidade é orbiratório!")
 	private String nome;
 	
 }

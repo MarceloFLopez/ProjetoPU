@@ -12,6 +12,7 @@ public class AutorDAO {
 
 	private EntityManager em = JPAUTil.getEntityManager();
 
+	// save
 	public void save(Autor t) {
 		try {
 			em.getTransaction().begin();
@@ -24,19 +25,7 @@ public class AutorDAO {
 		}
 	}
 
-	public void deleteId(Long id) {
-		try {
-			em.getTransaction().begin();
-			Autor p = em.find(Autor.class, id);
-			em.remove(p);
-			em.getTransaction().commit();
-		} catch (Exception e) {
-			em.clear();
-			em.close();
-			throw e;
-		}
-	}
-
+	// update
 	public void edit(Autor t) {
 		try {
 			em.getTransaction().begin();
@@ -49,12 +38,28 @@ public class AutorDAO {
 		}
 	}
 
-	public Autor findId(Long id) {
-		EntityManager em = JPAUTil.getEntityManager();
-		Autor p = em.find(Autor.class, id);
-		return p;
+	// delete
+	public void deleteId(Long id) {
+		try {
+			em.getTransaction().begin();
+			Autor e = em.find(Autor.class, id);
+			em.remove(e);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.clear();
+			em.close();
+			throw e;
+		}
 	}
 
+	// find id
+	public Autor findId(Long id) {
+		EntityManager em = JPAUTil.getEntityManager();
+		Autor c = em.find(Autor.class, id);
+		return c;
+	}
+
+	// list
 	@SuppressWarnings("unchecked")
 	public List<Autor> list() {
 		EntityManager em = JPAUTil.getEntityManager();

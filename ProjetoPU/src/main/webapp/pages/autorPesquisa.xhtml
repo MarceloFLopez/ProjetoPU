@@ -9,7 +9,7 @@
 <ui:composition template="/templates/modeloGeral.xhtml">
 	<ui:define name="metadata">
 		<f:metadata>
-			<f:event listener="#{fabricanteBean.carregar()}" type="preRenderView" />
+			<f:event listener="#{autorBean.carregar()}" type="preRenderView" />
 		</f:metadata>
 	</ui:define>
 	<ui:define name="conteudo">
@@ -17,26 +17,30 @@
 		<h:form>
 			<p:toolbar>
 				<f:facet name="left">
-					<h:outputText value="Fabricanetes" />
+					<h:outputText value="Lista de Autores" style="font-size: 22px;"/>
 				</f:facet>
 			</p:toolbar>
 
 			<h:panelGrid>
 				<p:outputLabel />
 				<p:commandButton value="Novo " icon="ui-icon-circle-plus"
-					action="/pages/fabricanteCadastro.xhtml?faces-redirect=true" />
+					action="/pages/autorCadastro.xhtml?faces-redirect=true" />
 			</h:panelGrid>
 
-			<p:dataTable emptyMessage="Nenhum registro encontrado!" value="#{fabricanteBean.listafabricantes}"
-				filteredValue="#{fabricanteBean.listaFabricantesFiltrado}" paginator="true" rows="15" var="fabricanteCursor">
-				<p:column headerText="ID" filterBy="#{fabricanteCursor.id}" sortBy="#{fabricanteCursor.id}" width="3%" style="font-size:13px; text-align:center">
-					<h:outputText value="#{fabricanteCursor.id}" />
+			<p:dataTable emptyMessage="Nenhum registro encontrado!"
+				value="#{autorBean.listaautors}"
+				filteredValue="#{autorBean.listaAutorsFiltrado}"
+				paginator="true" rows="15" var="autorCursor">
+				<p:column headerText="ID" filterBy="#{autorCursor.id}"
+					sortBy="#{autorCursor.id}" width="3%"
+					style="font-size:13px; text-align:center">
+					<h:outputText value="#{autorCursor.id}" />
 				</p:column>
-				<p:column headerText="Descrição" 
-					filterBy="#{fabricanteCursor.descricao.toUpperCase()}"
-					sortBy="#{fabricanteCursor.descricao.toUpperCase()}"
-					style="font-size:14px">
-					<h:outputText value="#{fabricanteCursor.descricao.toUpperCase()}" />
+				<p:column headerText="Nome"  width="50%"
+					filterBy="#{autorCursor.nome.toUpperCase()}"
+					sortBy="#{autorCursor.nome.toUpperCase()}"
+					style="font-size:14px; text-align:center">
+					<h:outputText value="#{autorCursor.nome.toUpperCase()}" />
 				</p:column>
 				<p:column headerText="Opções" width="7%" style="font-size:14px; text-align:center">			
 						<p:commandButton icon="ui-icon-pencil"  style="margin-rigth:10%" />
