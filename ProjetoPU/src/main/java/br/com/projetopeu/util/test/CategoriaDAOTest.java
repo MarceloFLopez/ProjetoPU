@@ -4,38 +4,38 @@ import java.util.List;
 
 import org.junit.Test;
 
-import br.com.projetopeu.dao.AutorDAO;
-import br.com.projetopeu.model.Autor;
+import br.com.projetopeu.dao.CategoriaDAO;
+import br.com.projetopeu.model.Categoria;
 
-public class AutorDAOTest {
+public class CategoriaDAOTest {
 
-	private AutorDAO dao = new AutorDAO();
+	private CategoriaDAO dao = new CategoriaDAO();
 	@Test
 	public void save() {
-		Autor a2 = new Autor();
-		a2.setNome("Autor Teste2");
-		Autor a3 = new Autor();
-		a3.setNome("Autor Teste3");
-		Autor a4 = new Autor();
-		a4.setNome("Autor Teste4");
+		Categoria a2 = new Categoria();
+		a2.setNome("Categoria Teste2");
+		Categoria a3 = new Categoria();
+		a3.setNome("Categoria Teste3");
+		Categoria a4 = new Categoria();
+		a4.setNome("Categoria Teste4");
 		dao.save(a2);
 		dao.save(a3);
 		dao.save(a4);
 	}
 
 	public void findId() {
-		Autor a2 = new Autor();
+		Categoria a2 = new Categoria();
 		a2 = dao.findId(1l);
 		System.out.println(a2);
 	}
 
 	public void listAll() {
-		List<Autor> list = dao.list();
+		List<Categoria> list = dao.list();
 		list.forEach(a -> System.out.println(a));
 	}
 
 	public void update() {
-		Autor a2 = new Autor();
+		Categoria a2 = new Categoria();
 		a2 = dao.findId(1l);
 		System.out.println(a2);
 		a2.setNome("Teste 1");
@@ -46,7 +46,7 @@ public class AutorDAOTest {
 
 
 	public void delete() {
-		Autor a2 = new Autor();		
+		Categoria a2 = new Categoria();		
 		dao.deleteId(5l);
 		a2 = dao.findId(1l);
 		System.out.println(a2);

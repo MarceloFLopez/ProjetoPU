@@ -30,50 +30,53 @@ public class Revista implements Serializable {
 	private Long id;
 	private LocalDate prazoEntrega;
 
-	@Column(length = 50, nullable = false, unique = true)
+	@Column(length = 50, unique = true)
 	private String titulo;
 	
-	@Column(nullable = false)
+	@Column(nullable = true)
 	private Integer edicao;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 20)
 	private String chamadaPrincipal;
 	
-	@Column(length = 150, nullable = false)
+	@Column(nullable = true, length = 1024)
 	private String descricao;
 	
-	@Column(length = 20, nullable = false)
+	@Column(length = 50)
 	private String palavraChave;
-	
-	@Column(length = 20, nullable = false)
+
+	@Column(length = 20)
 	@Min(value = 0, message = "O número de páginas informada deve ser mair que 0!")
 	private Integer numerPaginas;
-	
-	@Column(nullable = false, unique = true)
+
+	@Column( unique = true)
 	private Long codigoBarras;
 	
-	@Column(nullable = false, unique = true)
+	@Column(unique = true)
 	private Long eanDigital;
 	
-	@Column(nullable = false)
+	@Column()
 	private Long isbn;
 	
-	@Column(nullable = false)
-	private Long codigBisac;
+	@Column()
+	private Long issn;
 	
-	@Column(length = 50, nullable = false)
+	@Column(length = 20)
+	private String codigBisac;
+	
+	@Column(length = 150)
 	private String descricaoBisac;
 	
-	@Column(scale = 2, precision = 5,nullable = false)
+	@Column(scale = 2, precision = 5)
 	private BigDecimal precoCapa;
 	
-	@Column(length = 50, nullable = false)
+	@Column(length = 20)
 	private String periodicidade;
 	
-	@Column(length = 3, nullable = false)
+	@Column(length = 3)
 	private String epub;
 	
-	@Column(length = 3, nullable = false)
+	@Column(length = 3)
 	private String arquivoPdf;
 
 	@ManyToOne

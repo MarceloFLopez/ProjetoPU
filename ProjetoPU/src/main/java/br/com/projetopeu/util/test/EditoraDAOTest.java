@@ -11,7 +11,7 @@ public class EditoraDAOTest {
 
 	private EditoraDAO dao = new EditoraDAO();
 
-	
+	@Test
 	public void save() {
 		Editora a2 = new Editora();
 		a2.setNome("Editora Teste2");
@@ -44,7 +44,7 @@ public class EditoraDAOTest {
 		a2 = dao.findId(1l);
 		System.out.println(a2);
 	}
-	@Test
+
 	public void delete() {
 		Editora a2 = new Editora();
 		dao.deleteId(1l);

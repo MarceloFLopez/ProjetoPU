@@ -22,8 +22,8 @@ public class FabricanteBean implements Serializable {
 
 	private Fabricante fabricanteCadastro;
 	private List<Fabricante> listafabricantes;
-	private List<Fabricante> listaFabricantesFiltrado = null;
-	
+	private List<Fabricante> listaFabricantesFiltrado;
+
 	public void novo() {
 		fabricanteCadastro = new Fabricante();
 	}
@@ -38,13 +38,13 @@ public class FabricanteBean implements Serializable {
 			FacesUtil.addMsgError("Fabricante já esta cadastrado!");
 		}
 	}
-	
+
 	public void carregar() {
 		FabricanteDAO fabricanteDAO = new FabricanteDAO();
 		try {
 			listafabricantes = fabricanteDAO.list();
-		}catch (RuntimeException e) {
-			FacesUtil.addMsgError("Erro ao carregar a listagem"+e.getMessage());
+		} catch (RuntimeException e) {
+			FacesUtil.addMsgError("Erro ao carregar a listagem" + e.getMessage());
 		}
 	}
 

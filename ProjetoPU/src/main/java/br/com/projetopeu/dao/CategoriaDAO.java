@@ -36,6 +36,19 @@ public class CategoriaDAO {
 		}
 	}
 
+	public void deleteId(Long id) {
+		try {
+			em.getTransaction().begin();
+			Categoria p = em.find(Categoria.class, id);
+			em.remove(p);
+			em.getTransaction().commit();
+		} catch (Exception e) {
+			em.clear();
+			em.close();
+			throw e;
+		}
+	}
+	
 	public Categoria findId(Long id) {
 		EntityManager em = JPAUTil.getEntityManager();
 		Categoria c = em.find(Categoria.class, id);

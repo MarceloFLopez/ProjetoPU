@@ -7,6 +7,7 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -25,6 +26,7 @@ public class Fabricante implements Serializable {
 	private Long id;
 
 	@Column(length = 50, unique = true, nullable = false)
+	@NotBlank(message = "O descrição quantidade é orbiratório!")
 	private String descricao;
 
 }

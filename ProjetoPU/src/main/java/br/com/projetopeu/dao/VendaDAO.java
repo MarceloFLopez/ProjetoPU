@@ -63,11 +63,5 @@ public class VendaDAO {
 		return list;
 	}
 
-	public Venda findName(String nome) {
-		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Venda p WHERE p.nome = :nome");
-		Venda p = (Venda) query.setParameter("nome", nome).getSingleResult();
-		return p;
-	}
 
 }
