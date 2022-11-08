@@ -25,9 +25,11 @@
 					value="#{fabricanteBean.fabricanteCadastro.descricao}" />
 			</h:panelGrid>
 
-			<h:panelGrid columns="3">
+			<h:panelGrid columns="10">
 				<p:commandButton value="Limpar"	actionListener="#{fabricanteBean.novo()}" update=":painelDados" />
 				<p:commandButton value="Salvar" actionListener="#{fabricanteBean.salvar()}" update=":painelDados" />
+				<p:commandButton value="Excluir"  />
+				<p:commandButton value="Editar" />
 				<h:panelGrid style="text-decoration:none">
 					<a href="../pages/fabricantePesquisa.xhtml">Voltar</a>
 				</h:panelGrid>

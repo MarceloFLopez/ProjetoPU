@@ -5,14 +5,14 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.com.projetopeu.model.Venda;
+import br.com.projetopeu.model.Autor;
 import br.com.projetopeu.util.JPAUTil;
 
-public class VendaDAO {
+public class AutorDAO {
 
 	private EntityManager em = JPAUTil.getEntityManager();
 
-	public void save(Venda t) {
+	public void save(Autor t) {
 		try {
 			em.getTransaction().begin();
 			em.persist(t);
@@ -27,7 +27,7 @@ public class VendaDAO {
 	public void deleteId(Long id) {
 		try {
 			em.getTransaction().begin();
-			Venda p = em.find(Venda.class, id);
+			Autor p = em.find(Autor.class, id);
 			em.remove(p);
 			em.getTransaction().commit();
 		} catch (Exception e) {
@@ -37,7 +37,7 @@ public class VendaDAO {
 		}
 	}
 
-	public void edit(Venda t) {
+	public void edit(Autor t) {
 		try {
 			em.getTransaction().begin();
 			em.merge(t);
@@ -49,25 +49,18 @@ public class VendaDAO {
 		}
 	}
 
-	public Venda findId(Long id) {
+	public Autor findId(Long id) {
 		EntityManager em = JPAUTil.getEntityManager();
-		Venda p = em.find(Venda.class, id);
+		Autor p = em.find(Autor.class, id);
 		return p;
 	}
 
 	@SuppressWarnings("unchecked")
-	public List<Venda> list() {
+	public List<Autor> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Venda p ORDER BY p.id");
-		List<Venda> list = query.getResultList();
+		Query query = em.createQuery("SELECT p FROM Autor p ORDER BY p.id");
+		List<Autor> list = query.getResultList();
 		return list;
-	}
-
-	public Venda findName(String nome) {
-		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Venda p WHERE p.nome = :nome");
-		Venda p = (Venda) query.setParameter("nome", nome).getSingleResult();
-		return p;
 	}
 
 }

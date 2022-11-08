@@ -45,7 +45,7 @@ public class CategoriaDAO {
 	@SuppressWarnings("unchecked")
 	public List<Categoria> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Categoria p ORDER BY nome");
+		Query query = em.createQuery("SELECT p FROM Categoria p ORDER BY p.id");
 		List<Categoria> list = query.getResultList();
 		return list;
 	}

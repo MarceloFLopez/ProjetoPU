@@ -30,10 +30,10 @@
 			<p:dataTable emptyMessage="Nenhum registro encontrado!"
 				value="#{fabricanteBean.listafabricantes}"
 				filteredValue="#{fabricanteBean.listaFabricantesFiltrado}"
-				paginator="true" rows="22" var="fabricanteCursor">
+				paginator="true" rows="15" var="fabricanteCursor">
 				<p:column headerText="ID" filterBy="#{fabricanteCursor.id}"
 					sortBy="#{fabricanteCursor.id}" width="3%"
-					style="font-size:14px; text-align:center">
+					style="font-size:13px; text-align:center">
 					<h:outputText value="#{fabricanteCursor.id}" />
 				</p:column>
 				<p:column headerText="Descrição"
@@ -42,7 +42,9 @@
 					style="font-size:14px">
 					<h:outputText value="#{fabricanteCursor.descricao.toUpperCase()}" />
 				</p:column>
-				<p:column headerText="Opções" width="10%" style="font-size:15px">
+				<p:column headerText="Opções" width="7%" style="font-size:14px; text-align:center">			
+						<p:commandButton icon="ui-icon-pencil"  style="margin-rigth:10%" />
+						<p:commandButton  icon="ui-icon-trash" style="margin-left:10%" />
 				</p:column>
 			</p:dataTable>
 		</h:form>

@@ -14,17 +14,15 @@ import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-@NoArgsConstructor
 @AllArgsConstructor
-public class Fabricante implements Serializable {
+@NoArgsConstructor
+public class Editora implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
-
-	@Column(length = 50, unique = true, nullable = false)
-	private String descricao;
-
+	
+	@Column(length = 50, nullable = false,unique = true)
+	private String nome;
 }

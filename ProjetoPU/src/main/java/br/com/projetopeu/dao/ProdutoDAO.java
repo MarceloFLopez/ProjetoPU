@@ -58,7 +58,7 @@ public class ProdutoDAO {
 	@SuppressWarnings("unchecked")
 	public List<Produto> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Produto p");
+		Query query = em.createQuery("SELECT p FROM Produto p ORDER BY p.id");
 		List<Produto> list = query.getResultList();
 		return list;
 	}

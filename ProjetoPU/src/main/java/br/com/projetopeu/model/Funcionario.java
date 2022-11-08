@@ -45,6 +45,6 @@ public class Funcionario implements Serializable {
 	//@NotBlank(message = "O campo nome é obrigatório!")
 	private String funcao;
 	
-	//@NotNull(message = "O campo data de nascimento é obrigatório!")
+	//@NotBlank(message = "O campo data de nascimento é obrigatório!")
 	private LocalDate dataNascimento;
 }

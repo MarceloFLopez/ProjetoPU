@@ -71,7 +71,7 @@ public class FuncionarioDAO {
 	@SuppressWarnings("unchecked")
 	public List<Funcionario> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Funcionario p");
+		Query query = em.createQuery("SELECT p FROM Funcionario p ORDER BY p.id");
 		List<Funcionario> list = query.getResultList();
 		return list;
 	}

@@ -58,7 +58,7 @@ public class ItensDAO {
 	@SuppressWarnings("unchecked")
 	public List<Itens> list() {
 		EntityManager em = JPAUTil.getEntityManager();
-		Query query = em.createQuery("SELECT p FROM Itens p");
+		Query query = em.createQuery("SELECT p FROM Itens p ORDER BY p.id");
 		List<Itens> list = query.getResultList();
 		return list;
 	}
