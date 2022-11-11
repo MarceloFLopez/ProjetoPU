@@ -41,6 +41,7 @@ public class RevistaBean implements Serializable {
 			throw new LogExceptions(""+ex.getMessage());
 		}
 	}
+	// teste
 
 	public void carregar() {
 		RevistaDAO revistaDAO = new RevistaDAO();
