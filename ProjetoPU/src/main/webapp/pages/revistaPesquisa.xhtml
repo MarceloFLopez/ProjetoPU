@@ -13,78 +13,135 @@
 		</f:metadata>
 	</ui:define>
 	<ui:define name="conteudo">
-		
-			<h:form>
-				<p:toolbar>
-					<f:facet name="left">
-						<h:outputText value="Revistas" style="text-size:15px"/>
-					</f:facet>
-				</p:toolbar>
 
-				<h:panelGrid>
-					<p:outputLabel />
-					<p:commandButton value="Novo " icon="ui-icon-circle-plus"
-						action="/pages/revistaCadastro.xhtml?faces-redirect=true" />
-				</h:panelGrid>
+		<h:form id="pnlRevistasDados">
+			<p:toolbar>
+				<f:facet name="left">
+					<h:outputText value="Cadastro de Revistas"  style="font-size:22px"/>
+				</f:facet>
+			</p:toolbar>
 
-				<p:dataTable emptyMessage="Nenhum registro encontrado!"
-					value="#{revistaBean.listarevistas}"
-					filteredValue="#{revistaBean.listaRevistasFiltrado}"
-					paginator="true" rows="15" var="revistaCursor">
-					<p:column headerText="ID" width="3%" style="text-align:center">
-						<h:outputText value="#{revistaCursor.id}" />
-					</p:column>
+			<h:panelGrid columns="4">
+				<p:commandButton value="Novo " icon="ui-icon-circle-plus"  oncomplete="PF('abrirDialog').show();"/>
+				<p:commandButton value="Limpar"	actionListener="#{revistaBean.novo()}" update=":pnlRevistasDados" />
+			</h:panelGrid>
+		<p:dialog widgetVar="abrirDialog" closable="false" position="center" > 
+		<h:panelGrid columns="2" id="pnlRevistasDados" style="margin-bot:5px">
 
-					<p:column headerText="Edição" filterBy="#{revistaCursor.edicao}"
-						width="3%" style="text-align:center">
-						<h:outputText value="#{revistaCursor.edicao}" />
-					</p:column>
+				<p:outputLabel value="Titulo:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.titulo}" />
+						
+				<p:outputLabel value="Edição:" /> 
+				<p:inputText maxlength="4" size="40" value="#{revistaBean.revistaCadastro.edicao}" />
+				
+				<p:outputLabel value="Chamada Principal:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.chamadaPrincipal}" />					
 
-					<p:column headerText="Titulo"
-						filterBy="#{revistaCursor.titulo.toUpperCase()}">
-						<h:outputText value="#{revistaCursor.titulo.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Descrição:" />				
+				<p:inputTextarea rows="2" cols="42" value="#{revistaBean.revistaCadastro.descricao}" size="1024"/>
+					
+				<p:outputLabel value="Palavra Chave:" />
+				<p:inputText maxlength="50" size="40" value="#{revistaBean.revistaCadastro.palavraChave}" />	
 
-					<p:column headerText="Autor"
-						filterBy="#{revistaCursor.autor.nome.toUpperCase()}">
-						<h:outputText value="#{revistaCursor.autor.nome.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Autor:" />
+				<p:inputText  maxlength="50" size="40"  />				
+				
+				<p:outputLabel value="Numero de Páginas:" />
+				<p:inputText  maxlength="4" size="40" value="#{revistaBean.revistaCadastro.numerPaginas}" />
+				
+				<p:outputLabel value="Códig de Barras:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.codigoBarras}" />
+				
+				<p:outputLabel value="EAN Digital:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.eanDigital}" />									
+				
+				<p:outputLabel value="ISBN:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.isbn}" />
+				
+				<p:outputLabel value="ISSN:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.issn}" />
 
-					<p:column headerText="Categoria"
-						filterBy="#{revistaCursor.categoria.nome.toUpperCase()}">
-						<h:outputText
-							value="#{revistaCursor.categoria.nome.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Código Bisac" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.codigBisac}" />
 
-					<p:column headerText="Editora"
-						filterBy="#{revistaCursor.editora.nome.toUpperCase()}">
-						<h:outputText value="#{revistaCursor.editora.nome.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Descrição Bisac:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.descricaoBisac}" />
 
-					<p:column headerText="Chamada Principal"
-						filterBy="#{revistaCursor.chamadaPrincipal.toUpperCase()}">
-						<h:outputText
-							value="#{revistaCursor.chamadaPrincipal.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Categoria:" />
+				<p:inputText  maxlength="50" size="40"  />		
 
-					<p:column headerText="Palavra Chave"
-						filterBy="#{revistaCursor.palavraChave.toUpperCase()}">
-						<h:outputText value="#{revistaCursor.palavraChave.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Editora:" />
+				<p:inputText  maxlength="50" size="40"  />								
 
-					<p:column headerText="Chamada Principal"
-						filterBy="#{revistaCursor.chamadaPrincipal.toUpperCase()}">
-						<h:outputText
-							value="#{revistaCursor.chamadaPrincipal.toUpperCase()}" />
-					</p:column>
+				<p:outputLabel value="Preço da capa:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.precoCapa}" />
+				
+				<p:outputLabel value="Periodicidade:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.periodicidade}" />				
 
-					<p:column headerText="Opções" width="5%"
-						style=" text-align:center">
-						<p:commandButton icon="ui-icon-pencil" style="margin-rigth:2%" />
-						<p:commandButton icon="ui-icon-trash" style="margin-left:2%" />
-					</p:column>
-				</p:dataTable>
-			</h:form>
+				<p:outputLabel value="Arquivo PDF" />
+				<p:inputText  maxlength="50" size="40"/>
+
+				<p:outputLabel value="EPUB:" />
+				<p:inputText  maxlength="50" size="40" value="#{revistaBean.revistaCadastro.epub}" />
+				
+				<p:outputLabel value="Observação:" />				
+				<p:inputTextarea rows="2" cols="42" size="1024"/>
+																											
+			</h:panelGrid>
+			
+			<h:panelGrid columns="5" >
+				<p:commandButton value="Salvar" actionListener="#{revistaBean.salvar()}"  update="pnlRevistasDados"/>
+				<p:commandButton value="Fechar"	actionListener="#{revistaBean.novo()}" update="pnlRevistasDados"/>
+			</h:panelGrid>
+		</p:dialog> 
+			
+			<p:dataTable emptyMessage="Nenhum registro encontrado!" 
+				value="#{revistaBean.listarevistas}"
+				filteredValue="#{revistaBean.listaRevistasFiltrado}"
+				paginator="true" rows="15" var="revistaCursor"  style="font-size:15px">
+				
+				<p:column headerText="ID" width="3%" style="text-align:center;">
+					<h:outputText value="#{revistaCursor.id}" />
+				</p:column>
+
+				<p:column headerText="Titulo Original" width="26%" filterBy="#{revistaCursor.titulo.toUpperCase()}">
+					<h:outputText value="#{revistaCursor.titulo.toUpperCase()}" />
+				</p:column>
+
+				<p:column headerText="Edição" filterBy="#{revistaCursor.edicao}" width="3%" style="text-align:center">
+					<h:outputText value="#{revistaCursor.edicao}" />
+				</p:column>
+
+				<p:column headerText="EAN" width="7%" filterBy="#{revistaCursor.eanDigital}">
+					<h:outputText value="#{revistaCursor.eanDigital}" />
+				</p:column>
+
+				<p:column headerText="Chamada Principal"
+					filterBy="#{revistaCursor.chamadaPrincipal.toUpperCase()}">
+					<h:outputText value="#{revistaCursor.chamadaPrincipal.toUpperCase()}" />
+				</p:column>
+
+				<p:column headerText="Editora" width="12%"
+					filterBy="#{revistaCursor.editora.nome.toUpperCase()}">
+					<h:outputText value="#{revistaCursor.editora.nome.toUpperCase()}" />
+				</p:column>
+
+				<p:column headerText="Categoria" width="12%" filterBy="#{revistaCursor.categoria.nome.toUpperCase()}">
+					<h:outputText value="#{revistaCursor.categoria.nome.toUpperCase()}" />
+				</p:column>
+				
+				<p:column headerText="Periodicidade" width="8%" filterBy="#{revistaCursor.periodicidade.toUpperCase()}">
+					<h:outputText value="#{revistaCursor.periodicidade.toUpperCase()}" />
+				</p:column>
+
+				<p:column headerText="Opções" width="7%" style=" text-align:center">
+					<p:commandButton icon="ui-icon-pencil" style="margin-rigth:2%" />
+					<p:commandButton icon="ui-icon-trash" style="margin-left:2%" />
+				</p:column>
+
+			</p:dataTable>
+		</h:form>
 	</ui:define>
 </ui:composition>
 </html>

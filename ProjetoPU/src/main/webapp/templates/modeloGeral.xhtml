@@ -20,20 +20,20 @@
 		<p:autoUpdate />
 	</p:growl>
 	<p:layout fullPage="true" stateful="false" rendered="true">
-		<p:layoutUnit position="north" header="Sistema de Gestão de Vendas"
-			esizable="false" collapsible="false" style="text-align:center ">
+		
+		<!-- Header -->
+		<p:layoutUnit position="north" header="Sistema de Gestão de Vendas" esizable="false" collapsible="false" style="text-align:center; font-size:22px">
 		</p:layoutUnit>
-		<p:layoutUnit position="south" size="25"
-			style="font-size: 10px; text-align:right ">
-			<p:outputLabel style="font-weight: bold;"
-				value=" By MARCELO ORGANIZATION© " />
+		
+		<!-- Footer -->
+		<p:layoutUnit position="south" size="25" style="font-size: 10px; text-align:right ">
+			<p:outputLabel style="font-weight: bold;" value=" By MARCELO ORGANIZATION© " />
 			<p:outputLabel style="font-weight: bold;" value=" | 2022 ~ 2022 " />
 			<p:outputLabel value="| Building case.001-Beta 01.11.2022" />
 		</p:layoutUnit>
 
-		<p:layoutUnit position="west" size="auto" header="MENU"
-			sresizable="false" collapsible="true">
-
+		<!-- SECTION -->
+		<p:layoutUnit position="west" size="auto" header="MENU" sresizable="false" collapsible="true">
 			<h:form>
 				<p:panelMenu>
 					<p:submenu label="Arquivo">
@@ -54,10 +54,12 @@
 				</p:panelMenu>
 			</h:form>
 		</p:layoutUnit>
-
+		
+		<!-- BODY -->
 		<p:layoutUnit position="center" resizable="false" collapsible="false">
 			<ui:insert name="conteudo" />
 		</p:layoutUnit>
+		
 	</p:layout>
 
 </h:body>

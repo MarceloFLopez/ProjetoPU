@@ -8,6 +8,7 @@ import javax.inject.Named;
 
 import br.com.projetopeu.dao.AutorDAO;
 import br.com.projetopeu.exception.DatabaseException;
+import br.com.projetopeu.exception.LogExceptions;
 import br.com.projetopeu.exception.ResourceNotFoundException;
 import br.com.projetopeu.model.Autor;
 import br.com.projetopeu.util.FacesUtil;
@@ -28,7 +29,7 @@ public class AutorBean implements Serializable {
 		autorCadastro = new Autor();
 	}
 
-	public void salvar() throws DatabaseException, ResourceNotFoundException {
+	public void salvar() throws DatabaseException, ResourceNotFoundException,IndexOutOfBoundsException, LogExceptions {
 		try {
 			AutorDAO dao = new AutorDAO();
 			dao.save(autorCadastro);

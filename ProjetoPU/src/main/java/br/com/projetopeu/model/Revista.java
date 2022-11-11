@@ -30,35 +30,36 @@ public class Revista implements Serializable {
 	private Long id;
 	private LocalDate prazoEntrega;
 
-	@Column(length = 50, unique = true)
+	@Column(length = 50,nullable = false)
 	private String titulo;
 	
-	@Column(nullable = true)
+	@Column(nullable = false)
+	@Min(value = 0, message = "A edição informada deve ser maior que 0")
 	private Integer edicao;
 	
-	@Column(length = 20)
+	@Column(nullable = false,length = 20)
 	private String chamadaPrincipal;
 	
-	@Column(nullable = true, length = 1024)
+	@Column(nullable = false, length = 1024)
 	private String descricao;
 	
 	@Column(length = 50)
 	private String palavraChave;
 
-	@Column(length = 20)
-	@Min(value = 0, message = "O número de páginas informada deve ser mair que 0!")
+	@Column(nullable = false)
+	@Min(value = 0, message = "O número de páginas informada deve ser maior que 0")
 	private Integer numerPaginas;
 
-	@Column( unique = true)
+	@Column(length = 11, unique = true)
 	private Long codigoBarras;
 	
-	@Column(unique = true)
+	@Column(length = 11, unique = true)
 	private Long eanDigital;
 	
-	@Column()
+	@Column(length = 11)
 	private Long isbn;
 	
-	@Column()
+	@Column(length = 11)
 	private Long issn;
 	
 	@Column(length = 20)
