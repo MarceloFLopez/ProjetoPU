@@ -29,18 +29,24 @@
 
 			<p:dataTable emptyMessage="Nenhum registro encontrado!" value="#{fabricanteBean.listafabricantes}"
 				filteredValue="#{fabricanteBean.listaFabricantesFiltrado}" paginator="true" rows="15" var="fabricanteCursor">
-				<p:column headerText="ID" filterBy="#{fabricanteCursor.id}" sortBy="#{fabricanteCursor.id}" width="3%" style="font-size:12px; text-align:center">
+				<p:column headerText="ID" width="5%" style="font-size:12px; text-align:center">
 					<h:outputText value="#{fabricanteCursor.id}" />
 				</p:column>
 				<p:column headerText="Descrição" 
 					filterBy="#{fabricanteCursor.descricao.toUpperCase()}"
 					sortBy="#{fabricanteCursor.descricao.toUpperCase()}"
-					style="font-size:14px">
+					style="font-size:14px ; text-align:center">
 					<h:outputText value="#{fabricanteCursor.descricao.toUpperCase()}" />
 				</p:column>
+				
 				<p:column headerText="Opções" width="7%" style="font-size:13px; text-align:center">			
-						<p:commandButton icon="ui-icon-pencil"  style="margin-rigth:10%" />
-						<p:commandButton  icon="ui-icon-trash" style="margin-left:10%" />
+						<p:commandButton value="Excluir" style="margin-rigth:10%"  action="/pages/fabricanteCadastro.xhtml">
+							<f:param name="fabcod" value="#{fabricanteCursor.id}"/>
+						</p:commandButton>
+						
+						<p:commandButton value="Editar" style="margin-left:10%" action="/pages/fabricanteCadastro.xhtml">
+							<f:param name="fabcod" value="#{fabricanteCursor.id}"/>
+						</p:commandButton>
 				</p:column>
 			</p:dataTable>
 		</h:form>

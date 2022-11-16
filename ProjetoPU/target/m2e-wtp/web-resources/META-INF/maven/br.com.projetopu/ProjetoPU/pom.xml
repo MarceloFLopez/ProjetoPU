@@ -52,6 +52,13 @@
 		</dependency>
 
 		<!-- Primefaces -->
+				<!--Todos os temas gratuitos do Primefaces -->
+		<dependency>
+			<groupId>org.primefaces.extensions</groupId>
+			<artifactId>all-themes</artifactId>
+			<version>1.0.8</version>
+		</dependency>
+			
 		<dependency>
 			<groupId>org.glassfish</groupId>
 			<artifactId>javax.faces</artifactId>
